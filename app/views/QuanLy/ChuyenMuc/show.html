@@ -1,0 +1,17 @@
+#{extends 'adminPanel.html' /}
+#{set title:messages.get('crud.list.title', type.name) /}
+
+<div id="crudShow" class="${type.name}">
+
+    <h2 id="crudShowTitle">&{'EditRecord', type.modelName}</h2>
+    <div class="objectForm">
+    #{form action:@save(object._key()), enctype:'multipart/form-data', class:'form'}
+        #{QuanLy.crud.form /}
+        <p class="crudButtons">
+            <input type="submit" name="_save" value="&{'SaveBtn', type.modelName}" class="btn small green"/>
+            <input type="submit" name="_saveAndContinue" value="&{'SaveEditBtn', type.modelName}" class="btn small blue"/>
+            <a href="@{delete(object._key())}" class="btn small red">&{'Xoa', type.modelName}</a>
+        </p>
+    #{/form}
+    </div>
+</div>

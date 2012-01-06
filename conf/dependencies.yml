@@ -1,0 +1,10 @@
+# Application dependencies
+
+require:
+    - play
+    - play -> guice 1.2
+    - play -> secure
+    - play -> crud
+    - net.sf.flexjson -> flexjson 2.1
+    - play -> paginate 0.12
+    - play -> elasticsearch 0.3

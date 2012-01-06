@@ -1,0 +1,60 @@
+<div id="header">		
+    <div class="container">
+        <div class="grid grid_24">
+            <ul>							
+                <li class="nav">						
+                    <a href="/" class="item icon"><span>Home</span></a>					
+                </li>	
+                <li class="bar"></li>
+                
+                <li class="nav">						
+                    #{QuanLy.menu name:'PhongBan', url:'/quanly/phongban/list', aClass:'item' /}				
+                </li>
+                <li class="nav">						
+                    #{QuanLy.menu name:'ChucVu', url:'/quanly/chucvu/list', aClass:'item' /}
+                </li>
+                <li class="nav">						
+                    #{QuanLy.menu name:'ChuyenMuc', url:'/quanly/chuyenmuc/list', aClass:'item' /}
+                </li>
+                <li class="nav">						
+                    #{QuanLy.menu name:'User', url:'/quanly/user/list', aClass:'item' /}
+                </li>
+
+                		
+                <li class="nav profile dropdown right">						
+                    <a href="javascript:;" class="item"><img src="/public/images/layout/nav_profile_image.png" alt="Profile Image" /></a>	
+
+                    <div class="menu">	
+                        <h3>&{'CaNhan'}</h3>
+                        <ul>
+                            <li><a id="doimatkhau" href="javascript:;">&{'DoiMatKhau'}</a></li>
+                            <li>#{a @Secure.logout()}&{'Thoat'}#{/a}</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav dropdown right">						
+                    <a href="javascript:;" class="item icon email"><span>Email</span></a>	
+                    <div class="notify">3</div>	
+                    <div class="menu">	
+                        <h3>Inbox</h3>
+                        <ul>
+                            <li><a href="@{TinNhan.homThu()}">&{'HomThu'}</a></li>
+                            <li><a href="@{TinNhan.taoTinNhan()}">&{'SendMessage'}</a></li>
+                        </ul>												
+                    </div>				
+                </li>
+
+                <li class="bar right"></li>			
+            </ul>	
+        </div> <!-- .grid -->
+    </div> <!-- .container -->
+</div> <!-- #header -->
+
+
+<div id="sub-header" class="">		
+    <div class="container">
+        <div class="grid grid_24">
+            <h2>Dashboard</h2>	
+        </div> <!-- .grid -->
+    </div> <!-- .container -->
+</div> <!-- #sub-header -->

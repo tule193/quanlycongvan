@@ -1,0 +1,45 @@
+#{extends 'main.html' /}
+#{set title:'' /}
+#{TinNhan.menu unread:unread, action:action /}
+<div id="TinNhan" class="grid grid_18 prepend_1">
+    <form class="form" action="@{TinNhan.luuTinNhan()}" method="POST" enctype="multipart/form-data">    
+        <div class="field input">
+            <label>&{'NguoiNhan'}:</label>
+            <div class="fields">
+                <input type="text" name="nguoiNhan" value="" size="75" maxlength="1000" class="autocomplete-value" data-url="@{TinNhan.autocomplete()}"/>
+            </div>
+        </div>
+
+    <!--    attachments-->
+        <div class="field input">
+            <label>&{'DinhKemFile'}</label>
+            <div class="fields">
+                <input type="file" id="dinhKem">
+                <span>&{'Max3FilesUpload'}</span>
+            </div>
+            <div id="files_list"></div>
+        </div>
+    <!--    attachments-->
+
+        <div class="field input">
+            <label>&{'NoiDung'}:</label>
+            <div class="fields">
+                <textarea type="text" name="noiDung" value="" cols="72" rows="8" ></textarea>
+            </div>
+        </div>
+        <div class="actions">
+            <button class="btn small green" type="submit" value="send">&{'SendMessage'}</button>
+        </div>
+    </form>
+    
+</div>
+
+<!--script for attachments-->
+<script>
+	<!-- Create an instance of the multiSelector class, pass it the output target and the max number of files -->
+	var multi_selector = new MultiSelector( document.getElementById( 'files_list' ), 3);
+	<!-- Pass in the file element -->
+	multi_selector.addElement( document.getElementById( 'dinhKem' ) );
+        
+</script>
+<!--script for attachments-->

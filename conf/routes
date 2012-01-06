@@ -1,0 +1,27 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+# Home page
+GET     /                                       QuanLyCongVanDen.danhSachCongVanDen
+# Ignore favicon requests
+GET     /favicon.ico                            404
+# Catch all admin
+*       /quanly/?                               QuanLy.PhongBan.list
+*       /quanly/{controller}/?                  QuanLy.{controller}.list
+*       /quanly/{controller}/{action}           QuanLy.{controller}.{action}
+*       /lich/                                  QuanLyCongViec.lich
+*       /xemlich/                               QuanLyCongViec.xemlich
+*       /tinnhan/?                              TinNhan.homThu
+*       /quanlycongvanden/?                     QuanLyCongVanDen.danhSachCongVanDen
+# Map static resources from the /app/public folder to the /public path
+GET     /public/                                staticDir:public
+#for upload
+POST    /upload                                 Ajax.upload
+
+# Catch all
+*       /{controller}/{action}/{id}                  {controller}.{action}
+*       /{controller}/{action}                  {controller}.{action}
+#import CRUD routes
+*       /[qQ]uan[lL]y                                 module:crud
+# Import Secure routes
+*       /                                       module:secure

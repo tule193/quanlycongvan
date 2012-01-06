@@ -1,0 +1,37 @@
+<script>
+    //by Tô Việt Anh
+    $(function(){
+        #{if flash.success}
+        $.msgGrowl ({
+            type: 'success'
+            , title: '&{"ThongBaoSuccess"}'
+            , text: '${flash.success.raw()}'
+            ,lifetime: '${utils.Constants.FLASH_MESSAGE_LIFETIME}'
+        });
+        #{/if}
+        #{if flash.info}
+        $.msgGrowl ({
+            type: 'info'
+            , title: '&{"ThongBaoInfo"}'
+            , text: '${flash.info.raw()}'
+            ,lifetime: '${utils.Constants.FLASH_MESSAGE_LIFETIME}'
+        });
+        #{/if}
+        #{if flash.warning}
+        $.msgGrowl ({
+            type: 'warning'
+            , title: '&{"ThongBaoWarning"}'
+            , text: '${flash.warning.raw()}'
+            ,lifetime: '${utils.Constants.FLASH_MESSAGE_LIFETIME}'
+        });
+        #{/if}
+        #{if flash.error}
+        $.msgGrowl ({
+            type: 'error'
+            , title: '&{"ThongBaoError"}'
+            , text: '${flash.error.raw()}'
+            ,lifetime: '${utils.Constants.FLASH_MESSAGE_LIFETIME}'
+        });
+        #{/if}
+    });
+</script>

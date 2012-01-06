@@ -1,0 +1,12 @@
+ChucVu(hieutruong):
+  ten: Hiệu trưởng
+ChucVu(hieupho):
+  ten: Hiệu phó
+ChucVu(truongphong):
+  ten: Trưởng Phòng
+ChucVu(nhanvien):
+  ten: Nhân viên
+ChucVu(thuky):
+  ten: Thư ký
+ChucVu(vanthu):
+  ten: Văn Thư

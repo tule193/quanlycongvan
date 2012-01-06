@@ -1,0 +1,18 @@
+Hướng dẫn viết Test:
+    1.daoTest:
+        - Đây là thư mục để test các hàm trong package dao(data access object)
+        - Các interface trong package dao có nhiệm vụ thao tác với database,
+        thực hiện các nhiệm vụ liên quan đến CRUD(create-read-update-delete)
+        - Các class trong daoTest cần phải được extends UnitTest. Đặt tên class
+        theo qui ước sau: <Tên interface trong package dao>Test.java. Ví dụ class
+        test cho UserDao được đặt tên là UserDaoTest.java.
+        - Các function trong daoTest cần phải được đặt annotation là @Test.
+        Mỗi function trong package dao sẽ có một function trong daoTest để test. 
+        Đặt tên theo qui ước sau: <Tên function trong dao>Test. Ví dụ function
+        changePassword() sẽ có function test là changePasswordTest().
+        - Khi viết test cho mỗi function cần tính đến ít nhất các trường hợp sau:
+            + Trường hợp đúng bất kỳ
+            + Trường hợp sai bất kỳ(nếu có)
+            + Trường hợp nhập số liệu sai
+            + Trường hợp các kết quả cận biên khó kiểm soát cũng cần test.
+        - Xem thêm UserDaoTest.java để viết cho đúng chuẩn    

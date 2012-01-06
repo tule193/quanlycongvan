@@ -1,0 +1,329 @@
+# You can specialize this file for each language.
+# For example, for French create a messages.fr file
+#
+DonViChuQuan=SQTT
+TenDayDuDonViChuQuan=Trường sỹ quan chính trị Bắc Ninh
+#BEGIN - messages dùng chung
+    Error_CanNotFind!=Lỗi - Không tìm thấy dữ liệu!
+#END - messages dùng chung
+
+
+#BEGIN - messages dành cho secure module
+    secure.title=Đăng Nhập
+    secure.username=Tên Đăng Nhập
+    secure.password=Mật khẩu
+    secure.remember=Lưu thông tin đăng nhập
+    secure.signin=Đăng Nhập
+    secure.error=Tên đăng nhập hoặc mật khẩu bị sai.
+    secure.logout=Bạn đã thoát khỏi chương trình.
+#END - messages dành cho secure module
+
+Error_UserNotFound!=Lỗi - không tìm thấy người dùng!
+Error_CongVanDenNotFound!=Lỗi - không tìm thấy công văn đến!
+Error_CanNotSave=Lỗi - Không thể ghi vào cơ sở dữ liệu! Xin hãy thử lại sau.
+Error_CanNotDelete=Lỗi - Không thể xóa bản ghi! Xin hãy thử lại sau.
+Error_InputError!=Lỗi - Thông tin đầu vào bị sai!
+Error_MinMaxStringError!=Lỗi - Độ dài xâu kí tự phải lớn hơn %s kí tự và nhỏ hơn %s kí tự!
+
+Message_ChuaDangNhap=Bạn chưa đăng nhập.
+logout=Thoát
+SoThuTu=Số thứ tự
+TaoVanBanDen=Tạo văn bản đến
+NgayDen=Ngày đến
+CoQuanBanHanh=Cơ quan ban hành
+TieuDe=Tiêu đề
+SoVaKyHieuVB=Số và ký hiệu VB
+MucDoMat=Mức độ mật
+MucDoKhan=Mức độ khẩn
+SoTo=Số tờ
+MaHoSo=Mã hồ sơ
+TenLoaiVB=Tên loại VB
+NgayThangVB=Ngày tháng VB
+TepDinhKem=Tệp đính kèm
+LoaiVanBan=Loại văn bản
+GuiQuaBanGiamHieu=Gửi qua Ban Giám Hiệu
+GuiDenPhongBan=Gửi đến phòng ban
+GuiDenCaNhan=Gửi đến cá nhân
+TrichYeu=Trích yếu
+YKienPhanPhoi=Ý kiến phân phối
+ThoiHanGiaiQuyet=Thời hạn giải quyết
+ThuTruongPheDuyet=Thủ trưởng phê duyệt
+PhongBan=Phòng ban
+ThucHienChinh=Thực hiện chính
+HoTro=Hỗ trợ
+TaoVanBan=Tạo văn bản
+LuuChinhSua=Lưu chỉnh sửa
+XoaVanBan=Xóa văn bản
+BinhLuan=Bình luận
+Mat=Mật
+ToiMat=Tối mật
+TuyetMat=Tuyệt mật
+Khan=Khẩn
+ThuongKhan=Thượng khẩn
+HoaToc=Hỏa tốc
+Sua=Sửa
+Xoa=Xóa
+ChucVu=Chức vụ
+TaoMoiCongVanDenThanhCong=Tạo mới công văn đến thành công
+KhongTonTaiCongVanHoacCongVanDaBiXoa.XinHayKiemTraLai=Không tồn tại công văn hoặc công văn đã bị xóa. Xin hãy kiểm tra lại.
+TaoMoiCongVanDenKhongThanhCong.XinHayThuLaiSau=Tạo mới công văn đến không thành công. Xin hãy thử lại sau.
+ChuyenMuc=Chuyên mục
+User=Người dùng
+XemDanhSachCongVanDen=Xem danh sách công văn đến
+TaoMoiCongVanDen=Tạo mới công văn đến
+DanhSachCongVanDen=Danh sách công văn đến
+NoiDung=Nội dung
+ThanhPhan=Thành phần
+ChuTri=Chủ trì
+DiaDiem=Địa điểm
+TieuDe=Tiêu đề
+YKienDongGop=Ý kiến đóng góp
+GuiYKienDongGopThanhCong=Gửi ý kiến đóng góp thành công
+GuiYKienDongGopKhongThanhCong.XinHayThuLai=Gửi ý kiến đóng góp không thành công, xin hãy thử lại
+KhongTonTaiTepDinhKem.XinHayKiemTraLai=Không tồn tại tệp đính kèm, xin hãy kiểm tra lại
+TepDinhKem=Tệp đính kèm
+DaDongGopYKien:=đã đóng góp ý kiến:
+DongGopYKien=Đóng góp ý kiến
+CongVanDaDuocChuyenSangTrangThai=Công văn đã được chuyển sang trạng thái
+Thoat=Thoát
+ChuaCoThongTin=Chưa có thông tin
+LuuCongVanDenThanhCong=Lưu công văn đến thành công
+DaXinYKienChiHuy=Xin ý kiến chỉ huy
+DaGuiPhongBan=Đã gửi phòng ban
+DaPhanCongThucHien=Phân công thực hiện
+DaXong=Hoàn thành công việc
+HoanThanhXongViecXinYKienChiHuy=Hoàn thành xong việc xin ý kiến chỉ huy
+ChiVanThuMoiDuocSuDungChucNangNay=Chỉ văn thư mới được sử dụng chức năng này
+ChiTruongPhongHoacThuKyMoiDuocSuDungChucNangNay=Chỉ trưởng phòng hoặc thư ký mới được sử dụng chức năng này
+CaNhan=Cá nhân
+DoiMatKhau=Đổi mật khẩu
+MatKhauMoi=Mật khẩu mới
+XacNhan=Xác nhận
+MatKhauHienTai=Mật khẩu hiện tại
+MatKhauKhongDung=Mật khẩu không đúng
+MatKhauMoiVaMatKhauXacNhanKhongGiongNhau=Mật khẩu mới và mật khẩu xác nhận không giống nhau
+ThayDoiMatKhauThanhCong=Thay đổi mật khẩu thành công
+ChuaLuaChon=Chưa lựa chọn
+TaoMoiCongVanDi=Tạo mới công văn đi
+MAT=Mật
+TUYET_MAT=Tuyệt mật
+TOI_MAT=Tối mật
+KHAN=Khẩn
+THUONG_KHAN=Thượng khẩn
+HOA_TOC=Hỏa tốc
+NoiNhan=Nơi nhận
+TaoCongVanDi=Tạo công văn đi
+QuaNhieuBanGhiBiXoa.XinHayKiemTraLai=Quá nhiều bản ghi bị xóa.Xin Hãy kiểm tra lại
+ChiNguoiTaoCongVanMoiCoQuyenChinhSua=Chỉ người tạo công văn mới có quyền chỉnh sửa
+#BEGIN - messages dành cho model User
+    ten=Tên
+    username=Tài khoản
+    ho=Họ
+    tenDem=Tên Đệm
+    phongBan=Phòng ban
+    chucVu=Chức vụ
+    password=Mật khẩu
+    capBac=Cấp bậc
+    isActive=Active
+#END - messages dành cho model User
+
+SaveBtn=Lưu lại
+SaveEditBtn=Lưu lại và chỉnh sửa
+SaveAddBtn=Lưu lại và thêm bản ghi mới
+
+AddBtn=Thêm &{%s} mới
+EditRecord=Sửa &{%s}
+DeleteRecord=Xóa &{%s}
+
+#BEGIN - messages dành cho cấp bậc
+    BINH_NHAT=Binh nhất
+    BINH_NHI=Binh nhì
+    HOC_VIEN=Học viên
+    HA_SI=Hạ sĩ
+    TRUNG_SI=Trung sĩ
+    THUONG_SI=Thượng sĩ
+    THIEU_UY=Thiếu úy
+    TRUNG_UY=Trung úy
+    THUONG_UY=Thượng úy
+    DAI_UY=Đại úy
+    THIEU_TA=Thiếu tá
+    TRUNG_TA=Trung tá
+    THUONG_TA=Thượng tá
+    DAI_TA=Đại tá
+    THIEU_TUONG=Thiếu tướng
+    TRUNG_TUONG=Trung tướng
+    THUONG_TUONG=Thượng tướng
+    DAI_TUONG=Đại tướng
+#END - messages dành cho cấp bậcư
+#BEBIN - messages dành cho role
+    phanQuyen=Phân quyền
+    VAN_THU=Văn thư
+    BAN_GIAM_HIEU=Ban giám hiệu
+    TRUONG_PHONG=Trưởng phòng, trưởng ban
+    THU_KY=Thư ký
+    NHAN_VIEN=Nhân viên
+#END - messages dành cho role
+
+Required=Bắt buộc phải có
+
+#BEGIN - messages dành cho CRUD
+
+    crud.title=Administration
+    crud.home=Home
+    crud.blank=New
+    crud.index.title=Choose the object to edit
+    crud.index.objectType=Object type
+    crud.index.action=
+    crud.index.add=Add
+    crud.add=Add &{%s}
+    crud.list.title=&{%s}
+    crud.list.size=%d &{%s}
+    crud.list.totalSize=Tìm thấy %d bản ghi
+    crud.pagination.previous=« Previous
+    crud.pagination.next=Next »
+    crud.pagination.last=Last »»
+    crud.pagination.first=«« First
+    crud.show.title=Edit &{%s}
+    crud.save=Save
+    crud.saveAndContinue=Save and continue editing
+    crud.cancel=Cancel
+    crud.hasErrors=Please correct errors
+    crud.blank.title=Add &{%s}
+    crud.saveAndAddAnother=Save and create another
+    crud.delete=Delete &{%s}
+    crud.created=The &{%s} has been created
+    crud.saved=The &{%s} has been saved
+    crud.deleted=The &{%s} has been deleted
+    crud.delete.error=Cannot delete this object
+    crud.search=Tìm kiếm
+    crud.none=Chưa lựa chọn
+    crud.selectValue=(Please select a value)
+
+    crud.help.required=*
+    crud.help.minlength=Min length is %d.
+    crud.help.maxlength=Max length is %d.
+    crud.help.email=Valid email address.
+    crud.help.dateformat=&{%s} format.
+    crud.help.numeric=Điền số.
+    crud.help.min=Must be greater than %d.
+    crud.help.future=In the future.
+    crud.help.past=In the past.
+    crud.help.after=After %s.
+    crud.help.before=Before %s.
+    crud.help.range=Between %d and %d
+
+#END - messages dành cho CRUD
+
+#BEGIN - messages dành cho Paginate
+    play-paginate.first=Trang đầu
+    play-paginate.last=Trang cuối
+    play-paginate.next=Trang tiếp theo
+    play-paginate.prev=Trang trước
+    play-paginate.summary.display=Hiển thị từ bản ghi thứ
+    play-paginate.summary.to=đến thứ
+    play-paginate.summary.from=trong
+    play-paginate.summary.entries=bản ghi.
+#END - messages dành cho Paginate
+
+ConfirmInactive=Bạn có chắc chắn muốn chuyển người dùng này sang trạng thái Không hoạt động không?
+ConfirmActive=Bạn có chắc chắn muốn chuyển người dùng này sang trạng thái Hoạt động không?
+ConfirmDelete=Bạn có chắc chắn muốn xóa không?
+ConfirmResetPassword=Bạn có chắc chắn muốn thiết lập lại mật khẩu không?
+Active=Hoạt động
+Inactive=Không hoạt động
+ResetPassword=Thiết lập lại mật khẩu
+ActiveDescription=Chuyển người dùng sang trạng thái Hoạt động
+InactiveDescription=Chuyển người dùng sang trạng thái Không hoạt động
+ResetPassworDescription=Thiết lập lại mật khẩu
+
+
+#BEGIN - messages dành cho StringHelper
+    Error_MinMaxStringError!=Lỗi - Độ dài xâu kí tự phải lớn hơn %s kí tự và nhỏ hơn %s kí tự!
+    Error_MaxStringError!=Lỗi - Độ dài xâu kí tự phải nhỏ hơn %s kí tự!
+    Error_MinStringError!=Lỗi - Độ dài xâu kí tự phải lớn hơn %s kí tự!
+#END - messages dành cho String Helper
+ThongBaoSuccess=Thực hiện thành công
+ThongBaoInfo=Thông tin thêm
+ThongBaoWarning=Lưu ý
+ThongBaoError=Báo cáo lỗi
+since.seconds=%s giây trước
+since.minutes=%s phút trước
+since.hours=%s giờ trước
+since.days=%s ngày trước
+since.months=%s tháng trước
+since.years=%s năm trước 
+
+NguoiNhan=Người Nhận
+SendMessage=Gửi tin nhắn
+HomThu=Hòm Thư
+TinNhan=Tin Nhắn
+NewMessage=Tin Mới
+ConfirmDeleteMessage=Bạn có chắc chắn muốn xóa tin nhắn này không?
+DinhKemFile=Đính Kèm
+
+GuiTinNhanThanhCong=Gửi tin nhắn thành công.
+Error_EmptyNguoiNhan=Bạn chưa điền người nhận tin nhắn.
+Error_EmptyNoiDung=Bạn chưa điền nội dung tin nhắn.
+XoaTinNhanThanhCong=Xóa tin nhắn thành công.
+
+XemDanhSachCongVanDi=Xem danh sách công văn đi
+DanhSachCongVanDi=Danh sách công văn đi
+
+TrangThai=Trạng thái
+XemChiTietCongVanDi=Xem chi tiết Công văn đi
+DaGuiTruongPhong=Gửi trưởng phòng
+DaGuiBGH=Gửi Ban giám hiệu
+DaLuuVaGuiDi=Lưu và gửi đi
+GuiTruongPhong=Gửi trưởng phòng
+GuiBGH=Gửi Ban giám hiệu
+LuuVaGuiDi=Lưu và Gửi đi
+HoanThanhXongViecGuiTruongPhong=Hoàn thành xong việc gửi trưởng phòng
+KhongCoQuyenVoiCongVan=Không có quyền đối với công văn
+LoaiCongVan=Loại Công Văn
+NgayThangGui=Ngày tháng gửi
+HoanThanhXongViecGuiTruongPhong=Hoàn thành xong việc gửi trưởng phòng
+HoanThanhXongViecGuiBGH=Hoàn thành xong việc gửi Ban giám hiệu
+KhongPhaiLucGuiTruongPhong=Không phải lúc gửi trưởng phòng
+KhongPhaiLucGuiBGH=Không phải lúc gửi Ban giám hiệu
+NoiBo=Nội bộ
+NoiBoQuaBGH=Nội bộ qua Ban giám hiệu
+NgoaiGiao=Ngoại Giao
+PheDuyet=Phê duyệt
+DaPheDuyet=Đã phê duyệt
+KhongPhaiLucPheDuyet=Không phải lúc Phê duyệt
+HoanThanhXongViecPheDuyet=Hoàn thành xong việc Phê duyệt
+HoanThanhXongViecLuuVaGuiDi=Hoàng thành xong việc lưu và gửi đi
+DA_TAO=Đã tạo
+DA_GUI_TRUONG_PHONG=Gửi trưởng phòng
+DA_GUI_BGH=Gửi Ban giám hiệu
+DA_PHE_DUYET=Phê duyệt
+DA_LUU_VA_GUI_DI=Lưu và gửi đi
+KhongSuaCongVanDuocNua=Không sửa công văn được nữa
+KhongCo=Không có
+LuuCongVanDiThanhCong=Lưu công văn đi thành công
+PhaiDienDuTatCaCacTruong=Phải điền đủ tất cả các trường
+SoTrangPhaiLaSoNguyen=Số trang phải là số nguyên
+SoTrangPhaiLonHonKhong=Số trang phải lớn hơn không
+TaoMoiCongVanDiThanhCong=Tạo mới công văn đi thành công
+TimKiemCongVan=Tìm kiếm công văn
+TimKiem=Tìm kiếm
+CongVanDen=Công văn đến
+CongVanDi=Công văn đi
+TatCa=Tất cả
+KhongTimThayKetQuaNao=Không tìm thấy kết quả nào
+
+#Calendar
+LichCongViec=Lịch công việc
+NoiDung=Nội dung
+ThanhPhan=Thành phần
+ChuTri=Chủ trì
+DiaDiem=Địa điểm
+BatDau=Bắt đầu
+KetThuc=Kết thúc
+Ngay=Ngày
+QuayVe=Quay về
+
+Max3FilesUpload=Đính kèm tối đa 3 file.
+DeleteMessage=Xóa tin nhắn
+HasAttachedFile=Có file đính kèm
+

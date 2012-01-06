@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>&{'DonViChuQuan'} | #{get 'title' /}</title>
+        <meta charset="${_response_encoding}">
+        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/all.css'}">
+        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/myStyle.css'}">
+        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/datepicker/jquery-ui-1.8.16.datepicker.css'}">
+        #{get 'moreStyles' /}
+        <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
+        <script src="@{'/public/javascripts/jquery-1.5.2.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/autocomplete-value.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/autocomplete.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/multifile_compressed.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        #{get 'moreScripts' /}
+    </head>
+    <body>
+        <div id="wrapper" class="">
+            #{header /}
+            <div id="content">
+                <div class="container">
+                    #{doLayout /}
+                    #{DoiMatKhau /}
+                </div>
+            </div>
+            #{doJs /}
+            #{flashMessages /}
+        </div>
+    </body>
+</html>

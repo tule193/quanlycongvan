@@ -1,0 +1,216 @@
+<div id="trangthai">
+    <div class="btn-toolbar">
+        <a class="btn xlarge #{if _CongVanDen.trangThai>models.CongVanDen.TRANG_THAI_VAN_BAN.DA_LUU}green#{/if}
+           #{elseif _CongVanDen.trangThai<models.CongVanDen.TRANG_THAI_VAN_BAN.DA_LUU}red#{/elseif}
+           #{else}primary#{/else}" 
+           href='${_CongVanDen.trangThai==models.CongVanDen.TRANG_THAI_VAN_BAN.DA_LUU?"/QuanLyCongVanDen/daCoYKienChiHuy/"+_CongVanDen.id :"javascript:;"}'>
+            &{'DaXinYKienChiHuy'}
+        </a>
+        <a class="btn xlarge #{if _CongVanDen.trangThai>models.CongVanDen.TRANG_THAI_VAN_BAN.DA_XIN_Y_KIEN,}green#{/if}
+           #{elseif _CongVanDen.trangThai<models.CongVanDen.TRANG_THAI_VAN_BAN.DA_XIN_Y_KIEN,}red#{/elseif}
+           #{else}primary#{/else}" 
+           href='${_CongVanDen.trangThai==models.CongVanDen.TRANG_THAI_VAN_BAN.DA_XIN_Y_KIEN?"/QuanLyCongVanDen/daPhanCong/"+_CongVanDen.id :"javascript:;"}'>&{'DaPhanCongThucHien'}</a>
+        <a class="btn xlarge #{if _CongVanDen.trangThai>models.CongVanDen.TRANG_THAI_VAN_BAN.DA_PHAN_CONG,}green#{/if}
+           #{elseif _CongVanDen.trangThai<models.CongVanDen.TRANG_THAI_VAN_BAN.DA_PHAN_CONG,}red#{/elseif}
+           #{else}primary#{/else}" href='${_CongVanDen.trangThai==models.CongVanDen.TRANG_THAI_VAN_BAN.DA_PHAN_CONG?"/QuanLyCongVanDen/daHoanThanh/"+_CongVanDen.id :"javascript:;"}'>
+            &{'DaXong'}
+        </a>
+        
+    </div>
+</div>
+
+#{form @QuanLyCongVanDen.chinhSuaCongVanDen(_CongVanDen.id), method:'POST',enctype:'multipart/form-data'}
+<table class="form">
+    <tr>
+        <td>
+            <div class="field input">
+                <label>&{'SoThuTu'}:</label>
+                <div class="fields">
+                    <span>${_CongVanDen.soThuTu}</span>
+                </div>
+            </div>
+        </td>
+        <td>
+            <div class="field input">
+                <label>&{'NgayDen'}:</label>
+                <span>${utils.helpers.StringHelper.ngayThangNam(_CongVanDen.ngayDen)}</span>
+            </div>
+        </td>
+        <td>
+            <div class="field input">
+                <label>&{'SoVaKyHieuVB'}:</label>
+                <div class="fields">
+                    <span>${_CongVanDen.soKyHieu}</span>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <div class="field input">
+                <label>&{'CoQuanBanHanh'}:</label>
+                <div class="fields">
+                    <span>${_CongVanDen.tacGia}</span>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="field input">
+                <label>&{'NgayThangVB'}:</label>
+                <span>${utils.helpers.StringHelper.ngayThangNam(_CongVanDen.ngayThangVanBan)}</span>
+            </div>
+        </td>
+        <td>
+            <div class="field input">
+                <label>&{'TenLoaiVB'}:</label>
+                <div class="fields">
+                    <span>${_CongVanDen.loaiVanBan}</span>
+                </div>
+            </div>
+        </td>
+        <td>
+            <div class="field input">
+                <label>&{'MaHoSo'}:</label>
+                <div class="fields">
+                    <span>${_CongVanDen.maHoSo}</span>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <div class="field input">
+                <label>&{'TieuDe'}:</label>
+                <div class="fields long">
+                    <span>${_CongVanDen.tieuDe}</span>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <div class="field input">
+                <label>&{'TrichYeu'}:</label>
+                <div class="fields long">
+                    <span>${_CongVanDen.trichYeu}</span>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="field input">
+                <label>&{'MucDoMat'}:</label>
+                <div class="fields">                    
+                    <span class="${utils.helpers.StringHelper.mucDoMat(_CongVanDen.mucDoMat)}">${utils.helpers.StringHelper.mucDoMatToText(_CongVanDen.mucDoMat)}</span>
+                </div> <!-- .field -->
+            </div>
+        </td>
+        <td>
+            <div class="field input">
+                <label>&{'MucDoKhan'}:</label>
+                <div disabled class="fields">
+                    <span class="${utils.helpers.StringHelper.mucDoKhan(_CongVanDen.mucDoKhan)}">${utils.helpers.StringHelper.mucDoKhanToText(_CongVanDen.mucDoKhan)}</span>
+                </div>
+            </div>
+        </td>
+        <td>
+            <div class="field input">
+                <label>&{'SoTo'}:</label>
+                <div class="fields">
+                    <span>${_CongVanDen.soTrang}</span>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <div class="field file">
+                <label>&{'TepDinhKem'}:</label>
+                <div class="fields">					                    
+                    <a href="#">Download this attachment</a>
+                </div> 
+            </div> 
+        </td>
+    </tr>
+    <tr>
+
+        <td colspan="3">
+            <div class="field controlset">
+                <label>&{'LoaiVanBan'}:</label>
+                <div class="fields">
+                    <span>${utils.helpers.StringHelper.loaiVanBanToText(_CongVanDen.loaiVanBan)}</span>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <div class="field input">
+                <label>&{'YKienPhanPhoi'}:</label>
+                <div class="fields long">
+                    <span>${_CongVanDen.yKienPhanPhoi}</span>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="field input">
+                <label>&{'ThoiHanGiaiQuyet'}:</label>
+                <span>${utils.helpers.StringHelper.ngayThangNam(_CongVanDen.thoiHanGiaiQuyet)}</span>
+            </div>
+        </td>
+        <td>
+            <div class="field input">
+                <label>&{'ThuTruongPheDuyet'}:</label>
+                <div class="fields">
+                    <span>
+                    #{list items:_CongVanDen.nhanVien,as:'u'}
+                        ${u.type==models.CongVanDenUser.TYPE.CHI_HUY?utils.helpers.StringHelper.fullName(u.user):""}
+                    #{/list}
+                    </span>
+                </div>
+            </div>
+        </td>
+        <td>
+            <div class="field input">
+                <label>&{'PhongBan'}:</label>
+                <div class="fields">
+                    <span>
+                    #{list items:_CongVanDen.phongBan,as:'p'}
+                        ${p.ten}
+                    #{/list}
+                    </span>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="field input">
+                <label>&{'ThucHienChinh'}:</label>
+                <div class="fields">
+                    <span>
+                    #{list items:_CongVanDen.nhanVien,as:'u'}
+                        ${u.type==models.CongVanDenUser.TYPE.NHAN_VIEN_THUC_HIEN?utils.helpers.StringHelper.fullName(u.user):""}
+                    #{/list}
+                    </span>
+                </div>
+            </div>
+        </td>
+        <td colspan="2">
+            <div class="field input">
+                <label>&{'HoTro'}:</label>
+                <div class="fields">
+                    <span>
+                    ${utils.helpers.StringHelper.listUserToText(_CongVanDen.nhanVien,models.CongVanDenUser.TYPE.NHAN_VIEN)}
+                    </span>
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+#{/form}

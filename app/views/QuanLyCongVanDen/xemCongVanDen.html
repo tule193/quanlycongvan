@@ -1,0 +1,17 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+<div id="VanBanDen">
+    #{if session.get("role").equals(models.User.ROLE.NHAN_VIEN.toString())}
+        #{QuanLyCongVanDen.NhanVien_XemCongVanDen CongVanDen:cvd,dsPhongBan:dsPhongBan /}
+    #{/if}
+    #{elseif session.get("role").equals(models.User.ROLE.VAN_THU.toString())}
+        #{QuanLyCongVanDen.VanThu_XemCongVanDen CongVanDen:cvd,dsPhongBan:dsPhongBan /}
+    #{/elseif}
+    #{elseif session.get("role").equals(models.User.ROLE.TRUONG_PHONG.toString())||session.get("role").equals(models.User.ROLE.THU_KY.toString())}
+        #{QuanLyCongVanDen.TruongPhong_XemCongVanDen CongVanDen:cvd,dsPhongBan:dsPhongBan /}
+    #{/elseif}
+    #{elseif session.get("role").equals(models.User.ROLE.BAN_GIAM_HIEU.toString())}
+        #{QuanLyCongVanDen.BGH_XemCongVanDen CongVanDen:cvd,dsPhongBan:dsPhongBan /}
+    #{/elseif}
+</div>
+#{QuanLyCongVanDen.comments comments:cvd.comments,cvid:cvd.id/}

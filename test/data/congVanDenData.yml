@@ -1,0 +1,67 @@
+CongVanDen(cv1):
+  soThuTu: 12345
+  ngayDen: 20/11/2011
+  tacGia: Công ty TNHH ABC
+  soKyHieu: 12344AFDS
+  trichYeu: Đề nghị Công ty XYZ sáng thứ 7 đi đá bóng ở sân vận động Quốc gia Mỹ Đình
+  maHoSo: JFJLAJ
+  ngayThangVanBan: 16/11/2011
+  loaiVanBan: 0
+  mucDoMat: 0
+  mucDoKhan: 0
+  yKienPhanPhoi: nguyenvana làm, tranvanb hỗ trợ
+  thoiHanGiaiQuyet: 20/12/2011
+  phongBan: phongso1
+  nhanVienThucHienChinh: nguyenvana
+  nhanVienHoTro: [tranvanb]
+CongVanDen(cv2):
+  soThuTu: 12346
+  ngayDen: 20/11/2011
+  tacGia: Công ty TNHH ABC
+  soKyHieu: 12344AFDS
+  trichYeu: Đề nghị Công ty XYZ sáng thứ 7 đi đá bóng ở sân vận động Quốc gia Mỹ Đình. Không cao su
+  maHoSo: JFJLAJAQ
+  ngayThangVanBan: 17/11/2011
+  loaiVanBan: 0
+  mucDoMat: 0
+  mucDoKhan: 0
+  yKienPhanPhoi: nguyenvana làm, tranvanb hỗ trợ
+  thoiHanGiaiQuyet: 20/12/2011
+  phongBan: phongso1
+  nhanVienThucHienChinh: nguyenvana
+  nhanVienHoTro: [tranvanb]
+CongVanDen(cv3):
+  soThuTu: 12346
+  ngayDen: 20/11/2011
+  tacGia: Công ty TNHH ABC
+  soKyHieu: 12344AFDS
+  trichYeu: Đề nghị Công ty XYZ sáng thứ 7 đi đá bóng ở sân vận động Quốc gia Mỹ Đình. Không cao su
+  maHoSo: JFJLAJAQ
+  ngayThangVanBan: 17/11/2011
+  loaiVanBan: 0
+  mucDoMat: 0
+  mucDoKhan: 0
+  yKienPhanPhoi: nguyenvana làm, tranvanb hỗ trợ
+  thoiHanGiaiQuyet: 20/12/2011
+  phongBan: phongso1
+  nhanVienThucHienChinh: nguyenvana
+  nhanVienHoTro: [tranvanb]
+CongVanDen(cv4):
+  soThuTu: 12346
+  ngayDen: 20/11/2011
+  tacGia: Công ty TNHH ABC
+  soKyHieu: 12344AFDS
+  trichYeu: Đề nghị Công ty XYZ sáng thứ 7 đi đá bóng ở sân vận động Quốc gia Mỹ Đình. Không cao su
+  maHoSo: JFJLAJAQ
+  ngayThangVanBan: 17/11/2011
+  loaiVanBan: 0
+  mucDoMat: 0
+  mucDoKhan: 0
+  yKienPhanPhoi: nguyenvana làm, tranvanb hỗ trợ
+  thoiHanGiaiQuyet: 20/12/2011
+  phongBan: phongso1
+  nhanVienThucHienChinh: nguyenvana
+  nhanVienHoTro: [tranvanb]
+
+  
+  

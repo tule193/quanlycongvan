@@ -1,0 +1,232 @@
+<div id="trangthai">
+    <div class="btn-toolbar">
+        <a class="btn xlarge #{if _CongVanDen.trangThai>models.CongVanDen.TRANG_THAI_VAN_BAN.DA_LUU}blue#{/if}
+           #{elseif _CongVanDen.trangThai<models.CongVanDen.TRANG_THAI_VAN_BAN.DA_LUU}red#{/elseif}
+           #{else}green#{/else}" 
+           href='${_CongVanDen.trangThai==models.CongVanDen.TRANG_THAI_VAN_BAN.DA_LUU?"/QuanLyCongVanDen/daCoYKienChiHuy/"+_CongVanDen.id :"javascript:;"}'>
+            &{'DaXinYKienChiHuy'}
+        </a>
+        <a class="btn xlarge #{if _CongVanDen.trangThai>models.CongVanDen.TRANG_THAI_VAN_BAN.DA_XIN_Y_KIEN,}blue#{/if}
+           #{elseif _CongVanDen.trangThai<models.CongVanDen.TRANG_THAI_VAN_BAN.DA_XIN_Y_KIEN,}red#{/elseif}
+           #{else}green#{/else}" 
+           href='${_CongVanDen.trangThai==models.CongVanDen.TRANG_THAI_VAN_BAN.DA_XIN_Y_KIEN?"/QuanLyCongVanDen/daPhanCong/"+_CongVanDen.id :"javascript:;"}'>&{'DaPhanCongThucHien'}</a>
+        <a class="btn xlarge #{if _CongVanDen.trangThai>models.CongVanDen.TRANG_THAI_VAN_BAN.DA_PHAN_CONG,}blue#{/if}
+           #{elseif _CongVanDen.trangThai<models.CongVanDen.TRANG_THAI_VAN_BAN.DA_PHAN_CONG,}red#{/elseif}
+           #{else}green#{/else}" href='${_CongVanDen.trangThai==models.CongVanDen.TRANG_THAI_VAN_BAN.DA_PHAN_CONG?"/QuanLyCongVanDen/daHoanThanh/"+_CongVanDen.id :"javascript:;"}'>
+            &{'DaXong'}
+        </a>
+        
+    </div>
+</div>
+
+#{form @QuanLyCongVanDen.chinhSuaCongVanDen(_CongVanDen.id), method:'POST',enctype:'multipart/form-data'}
+<table class="form edit">
+    <tr>
+        <td>
+            <div class="field input">
+                <label>&{'SoThuTu'}:</label>
+                <div class="fields">
+                    <input type="text" name="CongVanDen.soThuTu" value="${_CongVanDen.soThuTu}" size=""/>
+                </div>
+            </div>
+        </td>
+        <td>
+            <div class="field input">
+                <label>&{'NgayDen'}:</label>
+                #{TienIch/datepicker name:'CongVanDen.ngayDen',value:utils.helpers.StringHelper.ngayThangNam(_CongVanDen.ngayDen),placeholder:''/}
+            </div>
+        </td>
+        <td>
+            <div class="field input">
+                <label>&{'SoVaKyHieuVB'}:</label>
+                <div class="fields">
+                    <input class="lastcolumn" type="text" name="CongVanDen.soKyHieu" value="${_CongVanDen.soKyHieu}" size=""/>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <div class="field input">
+                <label>&{'CoQuanBanHanh'}:</label>
+                <div class="fields">
+                    <input class="longbox" type="text" name="CongVanDen.tacGia" value="${_CongVanDen.tacGia}" size=""/>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="field input">
+                <label>&{'NgayThangVB'}:</label>
+                #{TienIch/datepicker name:'CongVanDen.ngayThangVanBan',value:utils.helpers.StringHelper.ngayThangNam(_CongVanDen.ngayThangVanBan),placeholder:''/}
+            </div>
+        </td>
+        <td>
+            <div class="field input">
+                <label>&{'TenLoaiVB'}:</label>
+                <div class="fields">
+                    <input type="text" name="CongVanDen.loaiVanBan" value="${_CongVanDen.loaiVanBan}" size=""/>
+                </div>
+            </div>
+        </td>
+        <td>
+            <div class="field input">
+                <label>&{'MaHoSo'}:</label>
+                <div class="fields">
+                    <input class="lastcolumn" type="text" name="CongVanDen.maHoSo" value="${_CongVanDen.maHoSo}" size=""/>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <div class="field input">
+                <label>&{'TieuDe'}:</label>
+                <div class="fields">
+                    <input class="longbox" type="text" name="CongVanDen.tieuDe" value="${_CongVanDen.tieuDe}" size=""/>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <div class="field input">
+                <label>&{'TrichYeu'}:</label>
+                <div class="fields">
+                    <textarea class="longbox" type="text" name="CongVanDen.trichYeu"  rows="3" cols="123">${_CongVanDen.trichYeu}</textarea>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="field input">
+                <label>&{'MucDoMat'}:</label>
+                <div class="fields">
+                    <select name="CongVanDen.mucDoMat" class="select_field">
+                        <option ${models.CongVanDen.MUC_DO_MAT.MAT==_CongVanDen.mucDoMat?"selected":""}
+                                value="${models.CongVanDen.MUC_DO_MAT.MAT}">&{'Mat'}</option>
+                        <option ${models.CongVanDen.MUC_DO_MAT.TUYET_MAT==_CongVanDen.mucDoMat?"selected":""}
+                                value="${models.CongVanDen.MUC_DO_MAT.TUYET_MAT}">&{'TuyetMat'}</option>
+                        <option ${models.CongVanDen.MUC_DO_MAT.TOI_MAT==_CongVanDen.mucDoMat?"selected":""}
+                                value="${models.CongVanDen.MUC_DO_MAT.TOI_MAT}">&{'ToiMat'}</option>                        
+                    </select>
+                </div> <!-- .field -->
+            </div>
+        </td>
+        <td>
+            <div class="field input">
+                <label>&{'MucDoKhan'}:</label>
+                <div class="fields">
+                    <select name="CongVanDen.mucDoKhan" class="select_field">
+                        <option ${models.CongVanDen.MUC_DO_KHAN.KHAN==_CongVanDen.mucDoKhan?"selected":""}
+                                value="${models.CongVanDen.MUC_DO_KHAN.KHAN}">&{'Khan'}</option>
+                        <option ${models.CongVanDen.MUC_DO_KHAN.THUONG_KHAN==_CongVanDen.mucDoKhan?"selected":""}
+                                value="${models.CongVanDen.MUC_DO_KHAN.THUONG_KHAN}">&{'ThuongKhan'}</option>
+                        <option ${models.CongVanDen.MUC_DO_KHAN.HOA_TOC==_CongVanDen.mucDoKhan?"selected":""}
+                                value="${models.CongVanDen.MUC_DO_KHAN.HOA_TOC}">&{'HoaToc'}</option>
+                    </select>
+                </div>
+            </div>
+        </td>
+        <td>
+            <div class="field input">
+                <label>&{'SoTo'}:</label>
+                <div class="fields">
+                    <input class="lastcolumn" type="text" name="CongVanDen.soTrang" value="${_CongVanDen.soTrang}" size=""/>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>        
+        <td colspan="2">
+            <div class="field file">
+                <label>&{'TepDinhKem'}:</label>
+                <div class="fields">					
+                    <input size="21" type="file" name="congVanDinhKem" />
+                    #{if _CongVanDen.congVanDinhKem!=null}#{a @QuanLyCongVanDen.downloadCongVanDinhKem(_CongVanDen.id)}&{'TepDinhKem'}#{/a}#{/if}
+                </div> 
+            </div> 
+        </td>        
+        <td>
+            <div class="field controlset">
+                <label>&{'LoaiVanBan'}:</label>
+                <div class="fields">
+                    <select name="CongVanDen.loaiVanBan" id="LoaiVanBan">
+                        <option value="${models.CongVanDen.LOAI_VAN_BAN.GUI_QUA_BGH}">&{'GuiQuaBanGiamHieu'}</option>
+                        <option value="${models.CongVanDen.LOAI_VAN_BAN.GUI_PHONG_BAN}">&{'GuiDenPhongBan'}</option>
+                        <option value="${models.CongVanDen.LOAI_VAN_BAN.GUI_CA_NHAN}">&{'GuiDenCaNhan'}</option>
+                    </select>
+                </div>
+            </div>
+        </td>
+    </tr>    
+    <tr>
+        <td colspan="3">
+            <div class="field input">
+                <label>&{'YKienPhanPhoi'}:</label>
+                <div class="fields">
+                    <textarea class="longbox" type="text" name="CongVanDen.yKienPhanPhoi" rows="3" cols="124" >${_CongVanDen.yKienPhanPhoi}</textarea>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="field input">
+                <label>&{'ThoiHanGiaiQuyet'}:</label>
+                #{TienIch/datepicker name:'CongVanDen.thoiHanGiaiQuyet',value:utils.helpers.StringHelper.ngayThangNam(_CongVanDen.thoiHanGiaiQuyet),placeholder:''/}
+            </div>
+        </td>
+        <td>
+            <div class="field input">
+                <label>&{'ThuTruongPheDuyet'}:</label>
+                <div class="fields">
+                    <input type="text" name="CongVanDen.thuTruongPheDuyet" 
+                           value="${utils.helpers.StringHelper.listUser(_CongVanDen.nhanVien,models.CongVanDenUser.TYPE.CHI_HUY)}" 
+                           size="" class="autocomplete" size="" data-url="@{Ajax.autocompleteChiHuy()}"/>
+                </div>
+            </div>
+        </td>
+        <td>
+            <div class="field input">
+                <label>&{'PhongBan'}:</label>
+                <div class="fields">
+                    <select class="lastcolumn" name="CongVanDen.phongBan" id="PhongBan">
+                        <option value="0" ${_CongVanDen.phongBan==null?"selected":""}>&{'ChuaLuaChon'}</option>
+                        #{list items:_dsPhongBan, as:'phongban'}
+                            <option value="${phongban.id}" #{if _CongVanDen.phongBan!=null}${phongban.id==_CongVanDen.phongBan.id?"selected":""}#{/if}>${phongban.ten}</option>
+                        #{/list}
+                    </select>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="field input">
+                <label>&{'ThucHienChinh'}:</label>
+                <div class="fields">
+                    <input type="text" name="CongVanDen.nhanVienThucHienChinh" 
+                           value='${utils.helpers.StringHelper.listUser(_CongVanDen.nhanVien,models.CongVanDenUser.TYPE.NHAN_VIEN_THUC_HIEN)}'
+                           size="" class="autocomplete" data-url="@{TinNhan.autocomplete()}"/>
+                </div>
+            </div>
+        </td>
+        <td colspan="2">
+            <div class="field input">
+                <label>&{'HoTro'}:</label>
+                <div class="fields">
+                    <input type="text" name="CongVanDen.nhanVienHoTro" 
+                           value="${utils.helpers.StringHelper.listUser(_CongVanDen.nhanVien,models.CongVanDenUser.TYPE.NHAN_VIEN)}" 
+                           size="76" class="autocomplete-value" data-url="@{TinNhan.autocomplete()}"/>
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+<div class="actions">
+    <button type="submit" class="btn primary" name="submit" value="edit">&{'LuuChinhSua'}</button>
+</div>
+#{/form}

@@ -1,0 +1,58 @@
+#{extends 'main.html' /}
+#{set 'title'}
+    &{'DanhSachCongVanDi'}
+#{/set}
+
+<div id="CongVanDi">
+	%{
+		if(page < 1) {
+			page = 1;
+		}
+	}%
+    <table class="data display danhsachcongvan">
+        <thead>
+            <tr>
+                <th class="noidung">&{'TieuDe'}</th>
+                <th class="thoihan">&{'TrangThai'}</th>
+            </tr>
+        </thead>
+        <tbody>
+        %{			
+			dao.jpaImpl.CongVanDiDaoImpl congVanDiDao = new dao.jpaImpl.CongVanDiDaoImpl();
+        }%
+            #{list items:dsCongVan, as:'congvan'}
+                <tr class='link congvandi
+                    ${congVanDiDao.isRead(congvan, session.get("username"))?"old":"new"}'  
+                    href="/QuanLyCongVanDi/xemCongVanDi/${congvan.id}">
+                    <td>
+                        <span class="tieude">${congvan.tieuDe}</span>
+                    </td>
+                    <td>
+                    	&{congvan.trangThai}
+                    </td>                    
+                </tr>
+            #{/list}
+        </tbody>        
+    </table>
+    <br/>
+    Trang:
+    
+    #{if page > 2}
+    	<a href="@{QuanLyCongVanDi.danhSachCongVanDi(1)}"><<</a>
+    #{/if}
+    
+    #{if page > 1}
+    	<a href="@{QuanLyCongVanDi.danhSachCongVanDi(page - 1)}">${page - 1}</a>
+    #{/if}
+    
+    ${page}
+    
+    #{if page < pageCount}
+    	<a href="@{QuanLyCongVanDi.danhSachCongVanDi(page + 1)}">${page + 1}</a>
+    #{/if} 
+    
+    #{if page < (pageCount - 1)}
+    	<a href="@{QuanLyCongVanDi.danhSachCongVanDi(pageCount)}">>></a>
+    #{/if}
+    
+</div>

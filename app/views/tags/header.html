@@ -1,0 +1,94 @@
+<div id="header">		
+    <div class="container">
+        <div class="grid grid_24">
+            <ul>							
+                <li class="nav">						
+                    <a href="/" class="item icon"><span>Home</span></a>					
+                </li>	
+                <li class="bar"></li>
+                <li class="nav dropdown">						
+                    <a href="javascript:;" class="item">Công Văn Đến</a>
+                    <div class="notify">7</div>
+                    <div class="menu">						
+                        <h3>Quản lý công văn đến</h3>
+                        <ul>
+                            <li>#{a @QuanLyCongVanDen.danhSachCongVanDen()}&{'XemDanhSachCongVanDen'}#{/a}</li>
+                            <li>#{a @QuanLyCongVanDen.taoCongVanDen()}&{'TaoMoiCongVanDen'}#{/a}</li>
+                        </ul>
+                    </div>				
+                </li>
+                <li class="nav dropdown">						
+                    <a href="javascript:;" class="item">Công Văn Đi</a>
+                    <div class="menu">							
+                        <h3>Quản lý công văn đi</h3>
+                        <ul>
+                            <li>#{a @QuanLyCongVanDi.danhSachCongVanDi()}&{'XemDanhSachCongVanDi'}#{/a}</li>
+                            <li>#{a @QuanLyCongVanDi.taoCongVanDi()}&{'TaoMoiCongVanDi'}#{/a}</li>
+                        </ul>
+                    </div>						
+                </li>
+                <li class="nav dropdown">						
+                    <a href="javascript:;" class="item">Hồ sơ công việc</a>			
+                    <div class="menu">	
+                        <h3>Quản lý hồ sơ</h3>
+                        <ul>
+                            <li><a href="pages/guidely.html">Hồ sơ năm nay - 2011</a></li>
+                        </ul>
+                        <h3>Hồ sơ cũ</h3>
+                        <ul>
+                            <li><a href="pages/wizard.html">năm 2010</a></li>
+                            <li><a href="pages/charts.html">năm 2009</a></li>
+                            <li><a href="pages/tables.html">năm 2008</a></li>
+                        </ul>
+                    </div>			
+                </li>				
+                <li class="nav dropdown">						
+                    <a href="@{QuanLy.PhongBan.list()}" class="item-modified">Quản lý</a>			
+                </li>		
+                #{if session.get("role").equals(models.User.ROLE.BAN_GIAM_HIEU.toString())}                
+                <li class="nav dropdown">						
+                    <a href="@{QuanLyCongViec.lich()}" class="item-modified">Calendar</a>			
+                </li>				
+                #{/if}
+                #{else}
+                <li class="nav dropdown">						
+                    <a href="@{QuanLyCongViec.xemlich()}" class="item-modified">Calendar</a>			
+                </li>
+                #{/else}                
+                <li class="nav dropdown">						
+                    <a href="@{TimKiemCongVan.TimKiem()}" class="item-modified">Tìm Kiếm</a>			
+                </li>					
+                <li class="nav profile dropdown right">						
+                    <a href="javascript:;" class="item"><img src="/public/images/layout/nav_profile_image.png" alt="Profile Image" /></a>	
+
+                    <div class="menu">	
+                        <h3>&{'CaNhan'}</h3>
+                        <ul>
+                            <li><a id="doimatkhau" href="javascript:;">&{'DoiMatKhau'}</a></li>
+                            <li>#{a @Secure.logout()}&{'Thoat'}#{/a}</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav dropdown right">						
+                    <a href="javascript:;" class="item icon email"><span>Email</span></a>	
+                    <div class="notify">3</div>	
+                    <div class="menu">	
+                        <h3>Inbox</h3>
+                        <ul>
+                            <li><a href="@{TinNhan.homThu()}">&{'HomThu'}</a></li>
+                            <li><a href="@{TinNhan.taoTinNhan()}">&{'SendMessage'}</a></li>
+                        </ul>												
+                    </div>				
+                </li>
+                <li class="bar right"></li>			
+            </ul>	
+        </div> <!-- .grid -->
+    </div> <!-- .container -->
+</div> <!-- #header -->
+<div id="sub-header" class="">		
+    <div class="container">
+        <div class="grid grid_24">
+            <h2>#{get 'title'/}</h2>				
+        </div> <!-- .grid -->
+    </div> <!-- .container -->
+</div> <!-- #sub-header -->

@@ -1,0 +1,108 @@
+#{extends 'main.html' /}
+#{set 'title'}
+    &{'TimKiemCongVan'}
+#{/set}
+
+#{form @TimKiemCongVan.TimKiem(filter, searchText), method:'GET',enctype:'multipart/form-data'}
+	<div class="field input">
+		<div class="fields">
+			<input type="text" name="searchText" value="${searchText}" size="104" />
+			<button type="submit" class="btn primary" name="submit" value="edit">&{'TimKiem'}</button>
+		</div>	
+	</div>
+	
+	<input type="radio" name="filter" value="0" 
+	#{if filter == null || filter == 0}
+		checked
+	#{/if}
+	/> &{'TatCa'} 
+	
+	<input type="radio" name="filter" value="1" 
+	#{if filter == 1}
+		checked
+	#{/if}
+	/> &{'CongVanDen'} 
+	
+	<input type="radio" name="filter" value="2" 
+	#{if filter == 2}
+		checked
+	#{/if}
+	/> &{'CongVanDi'} 
+	<br/>
+	<br/>
+
+#{/form}
+
+#{if ketquas != null}
+	#{if !ketquas.isEmpty()}
+	<div id="CongVan">
+	    <table class="data display danhsachcongvan">
+	        <thead>
+	            <tr>
+	                <th class="tieude">&{'TieuDe'}</th>
+	                <th class="highlight">&{'Highlight'}</th>
+	                <th class="highlight">&{'LoaiCongVan'}</th>
+	            </tr>
+	        </thead>
+	        <tbody>        	
+	            #{list items:ketquas, as:'ketqua'}
+                        #{if ketqua.loaiKetQua == controllers.KetQuaTimKiem.TYPE_KET_QUA.CONG_VAN_DI}
+			                <tr class='link congvandi'  
+			                    href="/QuanLyCongVanDi/xemCongVanDi/${ketqua.id}">
+			                    <td>
+			                        <span class="tieude"><b>${ketqua.tieuDe}</b></span>
+			                    </td>
+			                    <td>
+			                        <span class="highlight">${ketqua.highlight.raw()}</span>
+			                    </td>
+		  	                    <td>
+			                        <span class="highlight">
+			                        	&{'CongVanDi'}               
+			                        </span>
+			                    </td>                 
+			                </tr>
+                        #{/if}	    
+                        #{elseif ketqua.loaiKetQua == controllers.KetQuaTimKiem.TYPE_KET_QUA.CONG_VAN_DEN}
+			                <tr class='link congvandi'  
+			                    href="/QuanLyCongVanDen/xemCongVanDen/${ketqua.id}">
+			                    <td>
+			                        <span class="tieude"><b>${ketqua.tieuDe}</b></span>
+			                    </td>
+			                    <td>
+			                        <span class="highlight">${ketqua.highlight.raw()}</span>
+			                    </td>
+		  	                    <td>
+			                        <span class="highlight">
+			                        	&{'CongVanDen'}               
+			                        </span>
+			                    </td>                 
+			                </tr>
+                        #{/elseif}
+                        #{else}
+			                <tr class='link congvandi'  
+			                    href="/lich/${ketqua.id}">
+			                    <td>
+			                        <span class="tieude"><b>${ketqua.tieuDe}</b></span>
+			                    </td>
+			                    <td>
+			                        <span class="highlight">${ketqua.highlight.raw()}</span>
+			                    </td>
+		  	                    <td>
+			                        <span class="highlight">
+			                        	&{'Lich'}               
+			                        </span>
+			                    </td>                 
+			                </tr>
+                        #{/else} 
+	            #{/list}
+	        </tbody>
+	    </table>
+	</div>
+	#{/if}
+	#{else}
+		&{'KhongTimThayKetQuaNao'}
+	#{/else}
+#{/if}
+#{else}
+	&{'KhongTimThayKetQuaNao'}
+#{/else}

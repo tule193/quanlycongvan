@@ -1,0 +1,51 @@
+<div class="vbden-binhluan">
+    <label>&{'BinhLuan'}:</label>
+</div>
+<div id="VanBanDenComments">
+    <ul class="message_threads" id="comments">
+        #{list items:_comments,as:'comment'}
+            <li class="message">						
+                <a href="javascript:;"><img src="/public/images/avatar.jpg" alt="Avatar" class="avatar" /></a>
+                <div class="message_body">							
+                    <div class="message_text">
+                        <p class="message_author">${utils.helpers.StringHelper.fullName(comment.user)}</p>
+                        <p>${comment.noiDung}</p>
+                        <p class="message_date">${comment.created.since()}</p>
+                    </div>	
+                </div>				
+            </li>
+        #{/list}
+    </ul>
+    #{form @QuanLyCongVanDen.taoComment(), method:'POST',enctype:'multipart/form-data'}
+        <input name="commentCongVanDen.congVanDenID" value="${_cvid}" type="hidden"/>
+        <textarea name="commentCongVanDen.noidung" id="note" placeholder="&{'YKienDongGop'}..." cols="145"></textarea><br/>					
+        <button type="submit" value="&{'YKienDongGop'}" class="btn green">&{'DongGopYKien'}</button>
+    #{/form}
+</div>
+<script type="text/javascript">	
+    $(function () { 		
+	
+        var $messages = $('.message');	
+        $messages.addClass ('collapsed');
+        $messages.slice ($messages.length - 2, $messages.length).removeClass ('collapsed');
+	
+        $('.message_body').append ('<div class="message_arrow"></div>');
+	
+        $('.message_text').live ('click', function (e) {
+            e.preventDefault ();		
+            $(this).parents ('.message').removeClass ('collapsed');
+        });
+	
+        $('.message_arrow').live ('click', function (e) {
+            e.preventDefault ();
+            var msg = $(this).parents ('.message');
+		
+            if (msg.is ('.collapsed')) {
+                msg.removeClass ('collapsed');
+            } else {
+                msg.addClass ('collapsed');
+            }
+        });
+	
+    });
+</script>

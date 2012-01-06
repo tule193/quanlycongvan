@@ -1,0 +1,18 @@
+<script src="/public/javascripts/all.js"></script>
+<script src="/public/javascripts/myScript.js"></script>
+<script type="text/javascript">	
+    $(function () { 	
+        ReadyMade.init ({ theme: '' });
+        
+        //danh cho phan doi mat khau
+        $(function(){
+            $('#doimatkhau').live ('click', function () {
+                $.modal ({ 
+                    div: '#formDoiMatKhau' 
+                    , title: "&{'DoiMatKhau'}"	
+                    , overlayClose: true
+                });
+            });
+        });
+    });
+</script>

@@ -1,0 +1,23 @@
+<div class="field input">
+    <label>
+        &{_name}
+    </label>
+
+    <select name="${_name}">
+            %{ _property.choices.each() { }%
+            %{
+                    selected = false;
+                    if(field.error?.message != 'validation.required') {
+                        selected = it == _value;
+                    }
+                    label = it.toString()
+
+            }%
+            <option name="${it.name()}" ord="${it.ordinal()}" value="${it.name()}" ${selected ? 'selected="true"'.raw() : ''}>&{label}</option>
+            %{ } }%
+    </select>
+
+    #{ifError field.name}
+    <span class="error" style="inline-block">${field.error.raw()}</span>
+    #{/ifError}
+</div>

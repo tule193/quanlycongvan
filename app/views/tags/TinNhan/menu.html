@@ -1,0 +1,21 @@
+<div id="inbox-tabs" class="grid grid_5">
+    <ul>
+        #{if _action=="homThu"}
+        <li class="current">
+        #{/if}
+        #{else}
+        <li>
+        #{/else}
+            <a href="@{TinNhan.homThu()}">&{'HomThu'}</a>
+            <div class="count">(${_unread} &{'NewMessage'})</div>
+        </li>
+        #{if _action=="taoTinNhan"}
+        <li class="current">
+        #{/if}
+        #{else}
+        <li>
+        #{/else}
+            <a href="@{TinNhan.taoTinNhan()}">&{'SendMessage'}</a>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,260 @@
+<div id="trangthai">
+    <div class="btn-toolbar">
+        <a class="btn xlarge #{if _CongVanDi.trangThai>=models.CongVanDi.TRANG_THAI_CV.DA_GUI_TRUONG_PHONG}blue#{/if}
+           #{elseif _CongVanDi.trangThai==models.CongVanDi.TRANG_THAI_CV.DA_TAO}green#{/elseif}" 
+           #{if _CongVanDi.nguoiTao.username.equalsIgnoreCase(session.get('username'))}
+           	#{if _CongVanDi.trangThai == models.CongVanDi.TRANG_THAI_CV.DA_TAO}
+           		href='${"/QuanLyCongVanDi/guiTruongPhong/"+_CongVanDi.id}'
+           	#{/if}
+           #{/if}
+           >
+           #{if _CongVanDi.trangThai>=models.CongVanDi.TRANG_THAI_CV.DA_GUI_TRUONG_PHONG} 
+           	&{'DaGuiTruongPhong'}
+           #{/if}
+           #{else}
+           	&{'GuiTruongPhong'}
+           #{/else}
+        </a>
+        <a class="btn xlarge #{if _CongVanDi.trangThai>=models.CongVanDi.TRANG_THAI_CV.DA_GUI_BGH}blue#{/if}
+           #{elseif _CongVanDi.trangThai<models.CongVanDi.TRANG_THAI_CV.DA_GUI_TRUONG_PHONG}red#{/elseif}
+           #{else}green#{/else}" 
+           href='javascript:;'>
+           #{if _CongVanDi.trangThai>=models.CongVanDi.TRANG_THAI_CV.DA_GUI_BGH} 
+           	&{'DaGuiBGH'}
+           #{/if}
+           #{else}
+           	&{'GuiBGH'}
+           #{/else}
+        </a>
+        <a class="btn xlarge #{if _CongVanDi.trangThai>=models.CongVanDi.TRANG_THAI_CV.DA_PHE_DUYET}blue#{/if}
+           #{elseif _CongVanDi.trangThai<models.CongVanDi.TRANG_THAI_CV.DA_GUI_BGH}red#{/elseif}
+           #{else}green#{/else}" 
+           href='javascript:;'>
+           #{if _CongVanDi.trangThai>=models.CongVanDi.TRANG_THAI_CV.DA_PHE_DUYET} 
+           	&{'DaPheDuyet'}
+           #{/if}
+           #{else}
+           	&{'PheDuyet'}
+           #{/else}
+        </a>
+        <a class="btn xlarge #{if _CongVanDi.trangThai>=models.CongVanDi.TRANG_THAI_CV.DA_LUU_VA_GUI_DI,}blue#{/if}
+           #{elseif _CongVanDi.trangThai<models.CongVanDi.TRANG_THAI_CV.DA_GUI_BGH,}red#{/elseif}
+           #{else}green#{/else}" 
+           href='${_CongVanDi.trangThai == models.CongVanDi.TRANG_THAI_CV.DA_PHE_DUYET?"/QuanLyCongVanDi/luuVaGuiDi/"+_CongVanDi.id :"javascript:;"}'>
+           #{if _CongVanDi.trangThai>=models.CongVanDi.TRANG_THAI_CV.DA_LUU_VA_GUI_DI} 
+           	&{'DaLuuVaGuiDi'}
+           #{/if}
+           #{else}
+           	&{'LuuVaGuiDi'}
+           #{/else}
+        </a>
+        
+    </div>
+</div>
+
+#{form @QuanLyCongVanDi.suaCongVanDi(_CongVanDi.id), method:'POST',enctype:'multipart/form-data'}
+#{if _CongVanDi.trangThai.compareTo(models.CongVanDi.TRANG_THAI_CV.DA_PHE_DUYET) == 0}
+<table id="congvandi" class="form edit dapheduyet">
+#{/if}
+#{elseif _CongVanDi.trangThai.equals(models.CongVanDi.TRANG_THAI_CV.DA_LUU_VA_GUI_DI)}
+<table id="congvandi" class="form edit fixed">
+#{/elseif}
+#{else}
+<table id="congvandi" class="form edit">
+#{/else}
+    <tr>
+        <td colspan="3">
+            <div class="field input">
+                <label>&{'TieuDe'}:</label>
+                <div class="fields">                    
+                    #{if _CongVanDi.nguoiTao.username.equalsIgnoreCase(session.get('username'))} 
+	                    #{if _CongVanDi.trangThai.compareTo(models.CongVanDi.TRANG_THAI_CV.DA_PHE_DUYET) >= 0}
+	                    	<span>${_CongVanDi.tieuDe}</span>
+	                    #{/if}
+                            #{else}
+                            <input type="text"  name="CongVanDi.tieuDe" value="${_CongVanDi.tieuDe}"/>
+                            #{/else}
+                    #{/if}
+                    #{else}
+                    	<span>${_CongVanDi.tieuDe}</span>
+                    #{/else}                    
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <div class="field input">
+                <label>&{'TrichYeu'}:</label>
+                <div class="fields">                    
+                    #{if _CongVanDi.nguoiTao.username.equalsIgnoreCase(session.get('username'))} 
+	                    #{if _CongVanDi.trangThai.compareTo(models.CongVanDi.TRANG_THAI_CV.DA_PHE_DUYET) >= 0}
+	                    	<span>${_CongVanDi.trichYeu}</span>
+	                    #{/if}
+                            #{else}
+                            <textarea type="text" name="CongVanDi.trichYeu"  rows="3" cols="123">${_CongVanDi.trichYeu}</textarea>
+                            #{/else}
+                    #{/if}
+                    #{else}
+                    	<span>${_CongVanDi.trichYeu}</span>
+                    #{/else}                                      
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <div class="field input">
+                <label>&{'NoiNhan'}:</label>
+                <div class="fields">                    
+                    #{if _CongVanDi.nguoiTao.username.equalsIgnoreCase(session.get('username'))} 
+	                    #{if _CongVanDi.trangThai.compareTo(models.CongVanDi.TRANG_THAI_CV.DA_PHE_DUYET) >= 0}
+	                    	<span>${_CongVanDi.noiNhan}</span>
+	                    #{/if}
+                    #{else}
+                    <input type="text" name="CongVanDi.noiNhan"  value="${_CongVanDi.noiNhan}"></input>
+                    #{/else}
+                    #{/if}
+                    #{else}
+                    	<span>${_CongVanDi.noiNhan}</span>
+                    #{/else}
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="field input">
+                <label>&{'MucDoMat'}:</label>
+                <div class="fields">                    
+                    #{if _CongVanDi.nguoiTao.username.equalsIgnoreCase(session.get('username'))} 
+	                    #{if _CongVanDi.trangThai.compareTo(models.CongVanDi.TRANG_THAI_CV.DA_PHE_DUYET) >= 0}
+	                    	<span class="${utils.helpers.StringHelper.mucDoMat(_CongVanDi.mucDoMat)}">${utils.helpers.StringHelper.mucDoMatToText(_CongVanDi.mucDoMat)}</span>
+	                    #{/if}
+                            #{else}
+                            <select name="CongVanDi.mucDoMat" id="select_field" class="vanthu-cvdi">
+                                <option ${models.CongVanDi.MUC_DO_MAT.MAT==_CongVanDi.mucDoMat?"selected":""}
+                                        value="${models.CongVanDi.MUC_DO_MAT.MAT}">&{'Mat'}</option>
+                                <option ${models.CongVanDi.MUC_DO_MAT.TOI_MAT==_CongVanDi.mucDoMat?"selected":""}
+                                        value="${models.CongVanDi.MUC_DO_MAT.TOI_MAT}">&{'ToiMat'}</option>
+                                <option ${models.CongVanDi.MUC_DO_MAT.TUYET_MAT==_CongVanDi.mucDoMat?"selected":""}
+                                        value="${models.CongVanDi.MUC_DO_MAT.TUYET_MAT}">&{'TuyetMat'}</option>
+                            </select>
+                            #{/else}
+                    #{/if}
+                    #{else}
+                    	<span class="${utils.helpers.StringHelper.mucDoMat(_CongVanDi.mucDoMat)}">${utils.helpers.StringHelper.mucDoMatToText(_CongVanDi.mucDoMat)}</span>
+                    #{/else}             
+                </div> <!-- .field -->
+            </div>
+        </td>
+        <td>
+            <div class="field input">
+                <label>&{'MucDoKhan'}:</label>
+                <div class="fields">                   
+                    #{if _CongVanDi.nguoiTao.username.equalsIgnoreCase(session.get('username'))} 
+	                    #{if _CongVanDi.trangThai.compareTo(models.CongVanDi.TRANG_THAI_CV.DA_PHE_DUYET) >= 0}
+	                    	<span class="${utils.helpers.StringHelper.mucDoKhan(_CongVanDi.mucDoKhan)}">${utils.helpers.StringHelper.mucDoKhanToText(_CongVanDi.mucDoKhan)}</span>
+	                    #{/if}
+                            #{else}
+                            <select name="CongVanDi.mucDoKhan" id="select_field" class="vanthu-cvdi">
+                                <option ${models.CongVanDi.MUC_DO_KHAN.KHAN==_CongVanDi.mucDoKhan?"selected":""}
+                                        value="${models.CongVanDi.MUC_DO_KHAN.KHAN}">&{'Khan'}</option>
+                                <option ${models.CongVanDi.MUC_DO_KHAN.THUONG_KHAN==_CongVanDi.mucDoKhan?"selected":""}
+                                        value="${models.CongVanDi.MUC_DO_KHAN.THUONG_KHAN}">&{'ThuongKhan'}</option>
+                                <option ${models.CongVanDi.MUC_DO_KHAN.HOA_TOC==_CongVanDi.mucDoKhan?"selected":""}
+                                        value="${models.CongVanDi.MUC_DO_KHAN.HOA_TOC}">&{'HoaToc'}</option>
+                            </select>
+                            #{/else}
+                    #{/if}
+                    #{else}
+                    	<span class="${utils.helpers.StringHelper.mucDoKhan(_CongVanDi.mucDoKhan)}">${utils.helpers.StringHelper.mucDoKhanToText(_CongVanDi.mucDoKhan)}</span>
+                    #{/else}      
+                </div>
+            </div>
+        </td>
+        <td>
+            <div class="field input">
+                <label>&{'SoTo'}:</label>
+                <div class="fields">                    
+                    #{if _CongVanDi.nguoiTao.username.equalsIgnoreCase(session.get('username'))} 
+	                    #{if _CongVanDi.trangThai.compareTo(models.CongVanDi.TRANG_THAI_CV.DA_PHE_DUYET) >= 0}
+	                    	<span>${_CongVanDi.soTrang}</span>
+	                    #{/if}
+                            #{else}
+                            <input type="text" name="CongVanDi.soTrang" value="${_CongVanDi.soTrang}"  class="vanthu-cvdi"/>
+                            #{/else}
+                    #{/if}
+                    #{else}
+                    	<span>${_CongVanDi.soTrang}</span>
+                    #{/else}  
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <div class="field file">
+                <label>&{'TepDinhKem'}:</label>
+                <div class="fields">
+                    #{if _CongVanDi.nguoiTao.username.equalsIgnoreCase(session.get('username'))} 
+	                    #{if _CongVanDi.trangThai.compareTo(models.CongVanDi.TRANG_THAI_CV.DA_PHE_DUYET) < 0}
+	                    	<input type="file" name="congVanDinhKem" />
+	                    #{/if}
+                    #{/if}
+
+                    #{if _CongVanDi.congVanDinhKem!=null}#{a @QuanLyCongVanDi.downloadCongVanDinhKem(_CongVanDi.id)}&{'TepDinhKem'}#{/a}#{/if}
+                </div> 
+            </div> 
+        </td>
+    </tr>
+    
+#{if _CongVanDi.trangThai.compareTo(models.CongVanDi.TRANG_THAI_CV.DA_PHE_DUYET) >= 0}	    
+    <tr>
+        <td>
+            <div class="field input">
+                <label>&{'LoaiCongVan'}:</label>
+                <div class="fields">                    
+                    #{if _CongVanDi.trangThai.equals(models.CongVanDi.TRANG_THAI_CV.DA_LUU_VA_GUI_DI)} 
+                    <span>${_CongVanDi.loaiCongVan}</span>
+                    #{/if}
+                    #{else}
+                    <input type="text" name="CongVanDi.loaiCongVan" value="${_CongVanDi.loaiCongVan}" class="vanthu"/>
+                    #{/else}
+                </div> <!-- .field -->
+            </div>
+        </td>
+        <td>
+            <div class="field input">
+                <label>&{'SoVaKyHieuVB'}:</label>
+                <div class="fields">                    
+                    #{if _CongVanDi.trangThai.equals(models.CongVanDi.TRANG_THAI_CV.DA_LUU_VA_GUI_DI)} 
+                    <span>${_CongVanDi.soKyHieu}</span>
+                    #{/if}
+                    #{else}
+                    <input type="text" name="CongVanDi.soKyHieu" value="${_CongVanDi.soKyHieu}" class="vanthu"/>
+                    #{/else}
+                </div>
+            </div>
+        </td>
+        <td>
+            <div class="field input">
+                <label>&{'NgayThangGui'}:</label>
+                #{if _CongVanDi.trangThai.equals(models.CongVanDi.TRANG_THAI_CV.DA_PHE_DUYET)} 
+                	#{TienIch/datepicker name:'Con-gVanDi.ngayThangGui',class:'vanthu',value:utils.helpers.StringHelper.ngayThangNam(_CongVanDi.ngayThangGui),placeholder:''/}	
+                #{/if}                
+                #{elseif _CongVanDi.trangThai.equals(models.CongVanDi.TRANG_THAI_CV.DA_LUU_VA_GUI_DI)}
+                <span>${utils.helpers.StringHelper.ngayThangNam(_CongVanDi.ngayThangGui)}</span>
+                #{/elseif}
+            </div>
+        </td>    
+    </tr> 
+#{/if}    
+    
+</table>
+#{if !_CongVanDi.trangThai.equals(models.CongVanDi.TRANG_THAI_CV.DA_LUU_VA_GUI_DI)}
+	<div id="dapheduyet" class="actions">
+	    <button type="submit" class="btn primary" name="submit" value="edit">&{'LuuChinhSua'}</button>
+	</div>
+#{/if}
+#{/form}

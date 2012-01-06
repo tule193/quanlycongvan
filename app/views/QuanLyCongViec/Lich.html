@@ -1,0 +1,103 @@
+#{set title:'Calendar' /}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>        
+        <link rel='stylesheet' type='text/css' href="@{'/public/stylesheets/calendar/reset.css'}" />
+        <!--
+            <link rel='stylesheet' type='text/css' href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/themes/base/jquery-ui.css' />
+        -->
+
+        <link rel='stylesheet' type='text/css' href="@{'/public/stylesheets/calendar/jquery-ui-1.8.11.custom.css'}" />        
+
+
+        <link rel='stylesheet' type='text/css' href="@{'/public/stylesheets/calendar/jquery.weekcalendar.css'}" />	
+        <link rel='stylesheet' type='text/css' href="@{'/public/stylesheets/calendar/demo.css'}" />	
+
+        <link rel='stylesheet' type='text/css' href="@{'/public/stylesheets/calendar/default.css'}" />	        
+
+
+        <!--
+     <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js'></script>
+ <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js'></script>
+        -->
+        <script src="@{'/public/javascripts/calendar/jquery-1.4.4.min.js'}"></script>   
+        <script src="@{'/public/javascripts/calendar/jquery-ui-1.8.11.custom.min.js'}"></script>                 
+        <script src="@{'/public/javascripts/calendar/themeswitchertool.js'}"></script>
+        <script src="@{'/public/javascripts/calendar/date.js'}"></script>                 
+        <script src="@{'/public/javascripts/calendar/jquery.weekcalendar.js'}"></script>                 
+        <script src="@{'/public/javascripts/calendar/demo.js'}"></script>
+
+        <!--<script type="text/javascript" src="http://jqueryui.com/themeroller/themeswitchertool/"></script>-->
+        <script>
+            $(document).ready(function(){
+                $('#switcher').themeswitcher();
+            });
+        </script>
+
+
+    </head>
+    <body> 
+        <h1>&{'LichCongViec'}</h1>
+        <div id="about_button_container">
+            <div id="switcher"></div>  
+            <div id="back"><a href="/">&{'QuayVe'}</a></div>
+        </div>
+        <div id='calendar'></div>        
+        <div id="event_edit_container">
+            <form id="nhapLich">
+                <input type="hidden" />
+                <table id="event_edit_table">
+                    <tr>
+                        <td><label>&{'Ngay'}: </label></td><td><span class="date_holder"></span></td>
+                    </tr>
+                    <tr>
+                        <td><label for="start">&{'BatDau'}: </label></td><td><select name="start"><option value="">&{'BatDau'}</option></select></td>
+                    </tr>
+                    <tr>
+                        <td><label for="end">&{'KetThuc'}: </label></td><td><select name="end"><option value="">&{'KetThuc'}</option></select></td>
+                    </tr>
+                    <tr>
+                        <td><label for="noidung">&{'NoiDung'}: </label></td><td><textarea name="noidung"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><label for="thanhphan">&{'ThanhPhan'}: </label></td><td><input type="text" name="thanhphan" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="chutri">&{'ChuTri'}: </label></td><td><input type="text" name="chutri" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="diadiem">&{'DiaDiem'}: </label></td><td><input type="text" name="diadiem" /></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div id="event_view_container">
+            <form>
+                <input type="hidden" />
+                <table id="event_view_table">
+                    <tr>
+                        <td><label>&{'Ngay'}: </label></td><td><span class="date_holder"></span></td>
+                    </tr>
+                    <tr>                                           
+                        <td><label for="start">&{'BatDau'}: </label></td><td><span id="start"></span></td>
+                    </tr>
+                    <tr>
+                        <td><label for="end">&{'KetThuc'}: </label></td><td><span id="end"></span></td>
+                    </tr>
+                    <tr>
+                        <td><label for="noidung">&{'NoiDung'}: </label></td><td><span id="noidung"></span></td>
+                    </tr>
+                    <tr>
+                        <td><label for="thanhphan">&{'ThanhPhan'}: </label></td><td><span id="thanhphan"></span></td>
+                    </tr>
+                    <tr>
+                        <td><label for="chutri">&{'ChuTri'}: </label></td><td><span id="chutri"></span></td>
+                    </tr>
+                    <tr>
+                        <td><label for="diadiem">&{'DiaDiem'}: </label></td><td><span id="diadiem"></span></td>
+                    </tr>
+                </table>
+            </form>
+        </div>        
+    </body>
+</html>

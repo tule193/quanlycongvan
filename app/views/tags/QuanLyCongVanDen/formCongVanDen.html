@@ -1,0 +1,227 @@
+#{form @QuanLyCongVanDen.taoCongVanDen(), method:'POST',enctype:'multipart/form-data'}
+<table class="form">
+    <tr>
+        <td>
+            <div class="field input">
+                <label>&{'SoThuTu'}:</label>
+                <div class="fields">
+                    <input type="text" name="CongVanDen.soThuTu" value="" size=""/>
+                </div>
+            </div>
+        </td>
+        <td>
+            <div class="field input">
+                <label>&{'NgayDen'}:</label>
+                #{TienIch/datepicker name:'CongVanDen.ngayDen',value:'',placeholder:''/}
+            </div>
+        </td>
+        <td>
+            <div class="field input">
+                <label>&{'SoVaKyHieuVB'}:</label>
+                <div class="fields">
+                    <input class="lastcolumn" type="text" name="CongVanDen.soKyHieu" value="" size=""/>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <div class="field input">
+                <label>&{'CoQuanBanHanh'}:</label>
+                <div class="fields">
+                    <input class="longbox" type="text"  name="CongVanDen.tacGia" value=""/>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="field input">
+                <label>&{'NgayThangVB'}:</label>
+                #{TienIch/datepicker name:'CongVanDen.ngayThangVanBan',value:'',placeholder:''/}
+            </div>
+        </td>
+        <td>
+            <div class="field input">
+                <label>&{'TenLoaiVB'}:</label>
+                <div class="fields">
+                    <input type="text" name="CongVanDen.loaiVanBan" value="" size=""/>
+                </div>
+            </div>
+        </td>
+        <td>
+            <div class="field input">
+                <label>&{'MaHoSo'}:</label>
+                <div class="fields">
+                    <input class="lastcolumn" type="text" name="CongVanDen.maHoSo" value="" size=""/>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <div class="field input">
+                <label>&{'TieuDe'}:</label>
+                <div class="fields">
+                    <input class="longbox" type="text"  name="CongVanDen.tieuDe" value="" size="126"/>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <div class="field input">
+                <label>&{'TrichYeu'}:</label>
+                <div class="fields">
+                    <textarea class="longbox" type="text" name="CongVanDen.trichYeu" value="" rows="3" cols="123"></textarea>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="field input">
+                <label>&{'MucDoMat'}:</label>
+                <div class="fields">
+                    <select name="CongVanDen.mucDoMat" class="select_field">
+                        <option value="${models.CongVanDen.MUC_DO_MAT.MAT}">&{'Mat'}</option>
+                        <option value="${models.CongVanDen.MUC_DO_MAT.TOI_MAT}">&{'ToiMat'}</option>
+                        <option value="${models.CongVanDen.MUC_DO_MAT.TUYET_MAT}">&{'TuyetMat'}</option>
+                    </select>
+                </div> <!-- .field -->
+            </div>
+        </td>
+        <td>
+            <div class="field input">
+                <label>&{'MucDoKhan'}:</label>
+                <div class="fields">
+                    <select name="CongVanDen.mucDoKhan" class="select_field">
+                        <option value="${models.CongVanDen.MUC_DO_KHAN.KHAN}">&{'Khan'}</option>
+                        <option value="${models.CongVanDen.MUC_DO_KHAN.THUONG_KHAN}">&{'ThuongKhan'}</option>
+                        <option value="${models.CongVanDen.MUC_DO_KHAN.HOA_TOC}">&{'HoaToc'}</option>
+                    </select>
+                </div>
+            </div>
+        </td>
+        <td>
+            <div class="field input">
+                <label>&{'SoTo'}:</label>
+                <div class="fields">
+                    <input class="lastcolumn" type="text" name="CongVanDen.soTrang" value="" size=""/>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <div class="field file">
+                <label>&{'TepDinhKem'}:</label>
+                <div class="fields">					
+                    <input type="file" name="congVanDinhKem" />
+                </div> 
+            </div> 
+        </td>
+        <td>
+            <div class="field controlset">
+                <label>&{'LoaiVanBan'}:</label>
+                <div class="fields">
+                    <select name="LoaiVanBan" id="LoaiVanBan">
+                        <option value="${models.CongVanDen.LOAI_VAN_BAN.GUI_QUA_BGH}">&{'GuiQuaBanGiamHieu'}</option>
+                        <option value="${models.CongVanDen.LOAI_VAN_BAN.GUI_PHONG_BAN}">&{'GuiDenPhongBan'}</option>
+                        <option value="${models.CongVanDen.LOAI_VAN_BAN.GUI_CA_NHAN}">&{'GuiDenCaNhan'}</option>
+                    </select>
+                    <script>
+                        //đoạn mã này dùng để disable những field không cần thiết, tùy theo plan của người dùng
+                        $(function(){
+                            $('#LoaiVanBan').change(function(){
+                                switch($('#LoaiVanBan option:selected').attr('value'))
+                                {
+                                    case '${models.CongVanDen.LOAI_VAN_BAN.GUI_QUA_BGH}':
+                                        $("textarea[name='CongVanDen.yKienPhanPhoi']").attr('disabled','');
+                                        $("input[name='CongVanDen.thuTruongPheDuyet']").attr('disabled','');
+                                        $("input[name='CongVanDen.phongBan']").attr('disabled','');
+                                        break;
+                                    case '${models.CongVanDen.LOAI_VAN_BAN.GUI_PHONG_BAN}':
+                                        $("textarea[name='CongVanDen.yKienPhanPhoi']").attr('disabled','disabled');
+                                        $("input[name='CongVanDen.thuTruongPheDuyet']").attr('disabled','disabled');
+                                        $("input[name='CongVanDen.phongBan']").attr('disabled','');
+                                        break;
+                                    case '${models.CongVanDen.LOAI_VAN_BAN.GUI_CA_NHAN}':
+                                        $("textarea[name='CongVanDen.yKienPhanPhoi']").attr('disabled','disabled');
+                                        $("input[name='CongVanDen.thuTruongPheDuyet']").attr('disabled','disabled');
+                                        $("input[name='CongVanDen.phongBan']").attr('disabled','disabled');
+                                        break;
+                                }
+                            });
+                        });
+                    </script>
+                </div>
+            </div>
+        </td>
+    </tr>    
+    <tr>
+        <td colspan="3">
+            <div class="field input">
+                <label>&{'YKienPhanPhoi'}:</label>
+                <div class="fields">
+                    <textarea class="longbox" type="text" name="CongVanDen.yKienPhanPhoi" value="" rows="3" cols="124" ></textarea>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="field input">
+                <label>&{'ThoiHanGiaiQuyet'}:</label>
+                #{TienIch/datepicker name:'CongVanDen.thoiHanGiaiQuyet',value:'',placeholder:''/}
+            </div>
+        </td>
+        <td>
+            <div class="field input">
+                <label>&{'ThuTruongPheDuyet'}:</label>
+                <div class="fields">
+                    <input type="text" name="CongVanDen.thuTruongPheDuyet" value="" class="autocomplete" size="" data-url="@{Ajax.autocompleteChiHuy()}"/>
+                </div>
+            </div>
+        </td>
+        <td>
+            <div class="field input">
+                <label>&{'PhongBan'}:</label>
+                <div class="fields">
+                    <select class="lastcolumn" name="CongVanDen.phongBan" id="PhongBan">
+                        #{list items:_dsPhongBan, as:'phongban'}
+                            <option value="${phongban.id}">${phongban.ten}</option>
+                        #{/list}
+                    </select>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="field input">
+                <label>&{'ThucHienChinh'}:</label>
+                <div class="fields">
+                    <input type="text" name="CongVanDen.nhanVienThucHienChinh" value="" size="" class="autocomplete" data-url="@{TinNhan.autocomplete()}"/>
+                </div>
+            </div>
+        </td>
+        <td colspan="2">
+            <div class="field input">
+                <label>&{'HoTro'}:</label>
+                <div class="fields">
+                    <input type="text" name="CongVanDen.nhanVienHoTro" value="" size="80" class="autocomplete-value" data-url="@{TinNhan.autocomplete()}"/>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td colspan="2">
+            <div class="actions">
+                <button type="submit" class="btn green" name="submit" value="create">&{'TaoVanBan'}</button>
+            </div>
+        </td>
+    </tr>
+</table>
+#{/form}

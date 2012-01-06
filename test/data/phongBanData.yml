@@ -1,0 +1,10 @@
+PhongBan(phongso1):
+  ten: Phòng số 1
+PhongBan(phongso2):
+  ten: Phòng số 2
+PhongBan(phongso3):
+  ten: Phòng số 3
+PhongBan(phongso4):
+  ten: Phòng số 4
+PhongBan(phongso5):
+  ten: Phòng số 5

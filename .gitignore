@@ -1,0 +1,12 @@
+/tmp
+/modules
+/lib
+/test-result
+/logs
+/nbproject
+/.settings
+/eclipse
+/data
+/db
+.classpath
+.project

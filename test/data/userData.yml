@@ -1,0 +1,28 @@
+User(nguyenvana):
+  username: nguyenvana
+  password: bimat
+  ho: Nguyễn
+  tenDem: Văn
+  ten: A
+User(tranvanb):
+  username: tranvanb
+  password: 123456
+  ho: Trần
+  tenDem: Văn
+  ten: B
+
+# Data test active() va inactive()
+User(activeUser):
+  username: active
+  password: 123456
+  ho: Tran
+  tenDem: Van
+  ten: C
+  isActive: true
+User(isactiveUser):
+  username: inactive
+  password: 123456
+  ho: Tran
+  tenDem: Van
+  ten: C
+  isActive: false

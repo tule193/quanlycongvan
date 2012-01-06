@@ -1,0 +1,25 @@
+<div id="formDoiMatKhau" style="display:none">
+    #{form @NguoiDung.doiMatKhau(request.url) ,method:'POST',class:'form' }	
+        <div class="field">
+            <label for="oldPassword">&{'MatKhauHienTai'}</label>
+            <div class="fields">
+                <input type="password" name="oldPassword" value="" id="email" size="41" tabindex="1" />		
+            </div>
+        </div>
+        <div class="field">
+            <label for="newPassword">&{'MatKhauMoi'}</label>
+            <div class="fields">
+                <input type="password" name="newPassword" value="" id="email" size="41" tabindex="1" />		
+            </div>
+        </div>
+        <div class="field">
+            <label for="oldPassword">&{'XacNhan'}</label>
+            <div class="fields">
+                <input type="password" name="confirmPassword" value="" id="email" size="41" tabindex="1" />		
+            </div>
+        </div>
+        <div class="actions">
+            <button type="submit" class="btn red" tabindex="1">&{'DoiMatKhau'}</button>
+        </div>
+    #{/form}
+</div>

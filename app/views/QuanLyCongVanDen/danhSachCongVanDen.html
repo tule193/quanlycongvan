@@ -1,0 +1,28 @@
+#{extends 'main.html' /}
+#{set 'title'}
+    &{'DanhSachCongVanDen'}
+#{/set}
+<div id="CongVanDen">
+    <table class="data display danhsachcongvan">
+        <thead>
+            <tr>
+                <th class="ngayden">&{'NgayDen'}</th>
+                <th class="noidung">&{'TieuDe'}</th>
+                <th class="thoihan">&{'ThoiHanGiaiQuyet'}</th>
+            </tr>
+        </thead>
+        <tbody>
+            #{list items:dsCongVan, as:'congvan'}
+                <tr class='link congvanden #{if !session.get("role").equals(models.User.ROLE.VAN_THU.toString())}
+                    ${congvan.nhanVien.first().isRead==true?"old":"new"}#{/if}#{else}${congvan.trangThai<models.CongVanDen.TRANG_THAI_VAN_BAN.DA_XIN_Y_KIEN?"new":"old"}#{/else}' 
+                    href="/QuanLyCongVanDen/xemCongVanDen/${congvan.id}">
+                    <td>${utils.helpers.StringHelper.ngayThangNam(congvan.ngayDen)}</td>
+                    <td >
+                        <span class="tieude">${congvan.tieuDe}</span>
+                    </td>
+                    <td>${congvan.thoiHanGiaiQuyet==null?play.i18n.Messages.get("ChuaCoThongTin"):utils.helpers.StringHelper.ngayThangNam(congvan.thoiHanGiaiQuyet)}</td>
+                </tr>
+            #{/list}
+        </tbody>
+    </table>
+</div>

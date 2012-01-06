@@ -1,0 +1,11 @@
+<!--Hướng dẫn:copy mẫu dưới đây và điền vào
+*{--#{TienIch/datepicker name:'name',value:'value',placeholder:'placeholder'}--}*
+- Tô Việt Anh-->
+<div class="fields datepicker">
+    <input type="text" class="${_class} shortbox" name="${_name}" value="${_value}" placeholder="${_placeholder}" ${_disabled}/>
+</div>
+<script type="text/javascript" >
+    $(document).ready(function() {
+        $(".datepicker input").datepicker();
+    });
+</script>

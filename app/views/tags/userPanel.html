@@ -1,0 +1,14 @@
+<div id="UserPanel">
+    #{if session.contains("username")}
+        <div>
+            Hello ${session.username}<br/>
+            #{a @Secure.logout()}&{'logout'}#{/a}
+        </div>
+    #{/if}
+    #{else}
+        <p>
+            &{'Message_ChuaDangNhap'}
+            #{a @Secure.login()}&{'secure.signin'}#{/a}
+        </p>
+    #{/else}
+</div>

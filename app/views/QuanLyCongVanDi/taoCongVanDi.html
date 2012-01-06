@@ -1,0 +1,7 @@
+#{extends 'main.html' /}
+#{set 'title'}
+    &{'TaoMoiCongVanDi'}
+#{/set}
+#{form @QuanLyCongVanDi.luuCongVanDi(), method:'POST',enctype:'multipart/form-data',class:'form'}
+    #{QuanLyCongVanDi.formCongVanDi CongVanDi:congVanDi,type:'add'/}
+#{/form}

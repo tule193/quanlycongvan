@@ -1,0 +1,450 @@
+/* 
+    Document   : myStyle
+    Created on : Nov 15, 2011, 11:44:00 AM
+    Author     : to_viet_anh
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+em{
+	font-weight:bold;
+	color:#000;
+	background: none repeat scroll 0 0 #FF9600;
+}
+div.pagination-container {
+    float: right;
+    text-align: right;
+    margin-top: 2em;
+}
+
+ul.pagination {
+    list-style: none;
+    display: inline-block;
+}
+
+ul.pagination li {
+    list-style: none;
+    display: inline-block;
+    background: -moz-linear-gradient(center top , #FFFFFF 0%, #DFDBDB 100%) repeat scroll 0 0 transparent;
+    border: 1px solid #A0A0A0;
+    border-radius: 5px 5px 5px 5px;
+    cursor: pointer;
+    margin: 0 3px;
+    padding: 3px 8px;
+}
+
+ul.pagination li a.active {
+    color: orange;
+}
+
+div.message_body div.message_actions {
+    cursor: pointer;
+    height: 5px;
+    position: absolute;
+    right: 40px;
+    top: 12px;
+    width: 65px;
+}
+
+div.message_body div.message_actions div.delete_link {
+    float: right;
+}
+
+div.message_body div.message_actions a {
+    background-color: #BBBBBB;
+    border-radius: 50px 50px 50px 50px;
+    color: #FFFFFF;
+    line-height: 0;
+    padding: 0 6px 1px;
+}
+
+div.message_body div.message_actions div.attachment_image {
+    float: right;
+    margin-right: 15px;
+}
+
+div.message_body div.message_actions div.attachment_image img {
+    max-width: 18px;
+    max-height: 18px;
+}
+
+p.message_author {
+    font-weight: bold;
+    font-size: 110%;
+}
+
+div.message_body div.message_actions a:hover {
+    text-decoration: none;
+    background-color: #777777;
+}
+
+#CongVanDen tbody td{
+    padding: 0px 0px 0px 5px;
+}
+
+ul.ui-autocomplete{
+    list-style: none;
+    width: 460px;
+}
+
+ul.ui-autocomplete li {
+    list-style: none;
+    margin: 5px;
+}
+
+ul.ui-autocomplete #ui-active-menuitem{
+    font-weight: normal;
+    padding: 3px 5px;
+}
+
+ul.ui-autocomplete li a:hover {
+    text-decoration: none;
+}
+
+tr.congvanden.new span.tieude,tr.congvanden.old span.tieude{
+    font-weight: bold;
+    color: black;
+}
+
+tr.congvandi.new span.tieude{
+    font-weight: bold;
+    color: black;
+}
+
+tr.congvandi.old span.tieude{
+    font-weight: bold;
+}
+
+/*
+tr.congvanden.old span.tieude{
+    font-style: italic;
+}
+tr.congvanden.old *{
+    background-color: #EEEEEE;
+}*/
+tr.congvanden span.trichyeu{
+    color: #777777;
+}
+tr.link{
+    cursor: pointer;
+}
+.congvanden #comments{
+    width:100%;
+}
+#VanBanDenComments{
+    clear: both;
+    margin-top: 10px;
+}
+#VanBanDenComments .message_body{
+    width: 890px;
+}
+#VanBanDenComments .message_body p.message_author,#VanBanDenComments .message_body p{
+    margin: 0px;
+}
+#VanBanDenComments button{
+    float: right;
+    clear: both;
+}
+#VanBanDenComments{
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+table.danhsachcongvan .ngayden,table.danhsachcongvan .thoihan{
+    width: 120px;
+}
+#VanBanDen .actions{
+    overflow: auto;
+}
+#VanBanDen .actions button.btn{
+    float:right !important;
+}
+#VanBanDen table{
+    margin-bottom: 0px;
+}
+#VanBanDen #trangthai{
+    overflow: auto;
+    width: 100%;
+}
+#VanBanDen #trangthai .btn-toolbar a.btn{
+}
+/*debug*/
+div.debug{
+    background: yellow;
+    width: 100%;
+    overflow: auto;
+    padding: 5px;
+}
+div.debug ul li{
+    margin-left: 50px; 
+}
+div.debug ul{
+    padding: 0;
+    margin: 0;
+}
+/*debug*/
+
+/*CRUD QuanLy*/
+body#AdminPanel .form .error {
+    display:none;
+}
+.form .crudHelp {
+    color: red;
+}
+.topAddBtn {
+    display:inline-block;
+}
+.bottomAddBtn {
+    float: right;
+}
+/*CRUD QuanLy*/
+
+.item-modified {
+    padding-right: 25px;
+    background: url("../images/layout/header_nav_bg.png") repeat-x scroll 0 0 #313236;
+    border: 1px solid #000000;
+    border-radius: 4px 4px 4px 4px;
+    color: #FFFFFF;
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 15px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
+}
+
+.item-modified:hover {
+    text-decoration: none;
+    background-color: #111111;
+}
+
+div#TinNhan {
+    border-left: cadetblue 1px dotted;
+}
+/*CVDi-begin*/
+.inline{
+    display: inline-block;
+    /*for IE*/
+    zoom:1;
+    *display:inline;
+}
+.field.inline.input{
+    margin-right: 20px;
+}
+/*CVDi-end*/
+
+table.form {
+    border-collapse: collapse;
+    width: 938px;
+    margin-top: -10px;
+    margin-left: 10px;
+}
+
+.form td {    
+    border: 1px gray solid;
+    padding:3px 3px 3px 5px;
+}
+
+table .form.edit {
+    width: 939px;
+}
+
+.form.edit td {
+    border: none;  
+    width: 313px;
+}
+
+.form .field label:first-child {
+    font-size: 1em;    
+    font-weight: bold;
+    top:1px;
+}
+
+.fields.long span:first-child {      
+    float: left;
+    width: 750px;    
+}
+
+body {
+    font-family: Tahoma, Geneva, sans-serif;
+}
+
+span.MAT, span.KHAN {
+    font-weight: bold;
+    color: green;
+}
+
+span.TUYET_MAT, span.THUONG_KHAN {
+    font-weight: bold;
+    color: darkorange;
+}
+
+span.TOI_MAT, span.HOA_TOC {
+    font-weight: bold;
+    color: red;
+}
+
+.actions button.btn.primary {
+    margin-top: 10px;
+}
+
+#trangthai .btn-toolbar {
+    padding-left: 65px;
+}
+
+.vbden-binhluan {
+    margin-top: 10px;
+    margin-left: 17px;
+}
+
+.vbden-binhluan label {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#note {
+    float:right;
+    margin-right: 16px;
+    width: 858px;
+}
+
+#VanBanDenComments {
+    margin-left: 17px;
+}
+
+#VanBanDenComments button {
+    margin-top: 10px;
+    margin-right: 16px;
+}
+
+a.btn.small {
+    font-size: 10px;
+}
+
+input.lastcolumn {
+    width: 170px;
+}
+
+input.autocomplete-value.ui-autocomplete-input {
+    width:488px;
+}
+
+input.longbox {
+    width: 793px;
+}
+
+textarea.longbox {
+    width: 793px;
+}
+
+select.lastcolumn {
+    width: 185px;
+}
+
+select.select_field {
+    width: 155px;
+}
+
+div.actions button {
+    margin-right: 18px;
+}
+
+a.message_dinhKem{
+    cursor: pointer;
+}
+
+div#files_list input {
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+/*cong van den*/
+#CongVanDen table.form{
+    width: 939px;
+}
+
+#CongVanDen table.form td {
+    border: none;  
+    width: 313px;
+}
+
+/*cong van di*/
+#VanBanDi div#trangthai div.btn-toolbar {
+    padding-left: 30px;
+}
+
+/*cong van di edit*/
+table#congvandi {
+    width: 100%;
+    clear: both;       
+}
+
+table#congvandi tbody tr td {
+    border: none;
+}
+
+table#congvandi input[name='CongVanDi.tieuDe'] {
+    width: 796px;
+}
+
+table#congvandi textarea[name='CongVanDi.trichYeu'] {
+    width: 796px;
+    height: 60px;
+}
+
+table#congvandi input[name='CongVanDi.noiNhan'] {
+    width: 796px;
+}
+
+table#congvandi select[name='CongVanDi.mucDoMat'], table#congvandi select[name='CongVanDi.mucDoKhan'], table#congvandi input[name='CongVanDi.soTrang'] {
+    width: 166px;
+} 
+
+table#congvandi select[name='CongVanDi.mucDoMat'].vanthu-cvdi, table#congvandi select[name='CongVanDi.mucDoKhan'].vanthu-cvdi, table#congvandi input[name='CongVanDi.soTrang'].vanthu-cvdi {
+    width: 157px;
+}
+
+table#congvandi div.actions {
+    
+}
+
+div#dapheduyet button {
+    float: right;        
+}
+
+.vbdi-binhluan {
+    margin-top: 60px;
+    margin-left: 17px;
+}
+
+.vbdi-binhluan label {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/*cong van di da phe duyet*/
+table#congvandi.fixed tbody tr td {
+    border: 1px gray solid;
+}
+
+table#congvandi.dapheduyet tbody tr td {
+    border: 1px gray solid;
+}
+
+table#congvandi.dapheduyet tbody tr:last-child td {
+    padding-top: 20px;
+    border: none;
+}
+
+input.vanthu {
+    width: 155px;
+}
+
+/*form cong van di*/
+select[name='CongVanDi.mucDoMat'], select[name='CongVanDi.mucDoKhan'], select[name='CongVanDi.soTrang'] {
+    width: 150px;
+}

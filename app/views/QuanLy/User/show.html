@@ -1,0 +1,23 @@
+#{extends 'adminPanel.html' /}
+#{set title:messages.get('crud.list.title', type.name) /}
+
+<div id="crudShow" class="${type.name}">
+
+    <h2 id="crudShowTitle">&{'EditRecord', type.modelName}</h2>
+    <div class="objectForm">
+    #{form action:@save(object._key()), enctype:'multipart/form-data', class:'form'}
+        #{QuanLy.crud.User.formUpdateProfileUser /}
+        
+        <p class="crudButtons">
+            <input type="submit" name="_save" value="&{'SaveBtn', type.modelName}" class="btn small green"/>
+            <input type="submit" name="_saveAndContinue" value="&{'SaveEditBtn', type.modelName}" class="btn small blue"/>
+            %{ if (object.isActive == true) { }%
+            <a class="btn small red" href="javascript:decision('&{'ConfirmInactive'}', '@{inactive(object._key())}')" title="&{'InactiveDescription'}">&{'Inactive'}</a>
+            %{ } else {}%
+            <a class="btn small green" href="javascript:decision('&{'ConfirmActive'}', '@{active(object._key())}')" title="&{'ActiveDescription'}">&{'Active'}</a>
+            %{ }}%
+            <a class="btn small blue" href="javascript:decision('&{'ConfirmResetPasswor'}', '@{resetPassword(object._key())}')" title="&{'ResetPasswordDescription'}">&{'ResetPassword'}</a>
+        </p>
+    #{/form}
+    </div>
+</div>

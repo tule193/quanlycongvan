@@ -1,0 +1,14 @@
+## YAML Template.
+---
+ChuyenMuc(chuyenmucso1):
+  ten: Chuyên mục số 1
+ChuyenMuc(chuyenmucso2):
+  ten: Chuyên mục số 2
+ChuyenMuc(chuyenmucso3):
+  ten: Chuyên mục số 3
+ChuyenMuc(chuyenmucso4):
+  ten: Chuyên mục số 4
+ChuyenMuc(chuyenmucso5):
+  ten: Chuyên mục số 5
+ChuyenMuc(chuyenmucso6):
+  ten: Chuyên mục số 6

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>#{get 'title' /}</title>
+        <meta charset="${_response_encoding}">
+        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/all.css'}">
+        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/myStyle.css'}">
+        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/datepicker/jquery-ui-1.8.16.datepicker.css'}">
+        #{get 'moreStyles' /}
+        <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
+        <script src="@{'/public/javascripts/jquery-1.5.2.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        #{get 'moreScripts' /}
+    </head>
+    <body id="AdminPanel">
+        <div id="wrapper" class="">
+            #{QuanLy.header /}
+            <div id="content">
+                <div class="container">
+                
+                    #{doLayout /}
+                </div>
+            </div>
+            #{doJs /}
+        </div>
+        
+<!--        Script de thay doi vi tri span .error voi span .crudHelp-->
+    <script type="text/javascript">
+//        $(function(){
+//            $('.field.input').each(function() {
+//                errorArray = $(this).find('.error');
+//                if(errorArray.length > 0) {
+//                    error = errorArray.first();
+//                    father = error.parent();
+//                    error.remove();
+//                    father.append(error);
+//                }
+//            });
+//        });
+    </script>
+    </body>
+</html>

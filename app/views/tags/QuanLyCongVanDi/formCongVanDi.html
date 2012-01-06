@@ -1,0 +1,68 @@
+<input name="CongVanDi.id" value="${_CongVanDi.id}" type="hidden"/>    
+<div class="field input">
+    #{ifErrors}
+        <p class="error">
+            All fields are required!
+        </p>
+    #{/ifErrors}	
+    <label>&{'TieuDe'}:</label>
+        <div class="fields">
+            <input type="text"  name="CongVanDi.tieuDe" value="${_CongVanDi.tieuDe}" size="126" placeholder="&{'TieuDe'}..."/>
+        </div>
+    </div>
+    <div class="field input">
+        <label>&{'TrichYeu'}:</label>
+        <div class="fields">
+            <textarea type="text" name="CongVanDi.trichYeu" value="" rows="3" cols="123" placeholder="&{'TrichYeu'}...">${_CongVanDi.trichYeu}</textarea>
+        </div>
+    </div>
+
+    <div class="field input">
+        <label>&{'NoiNhan'}:</label>
+        <div class="fields">
+            <input type="text"  name="CongVanDi.noiNhan" value="${_CongVanDi.noiNhan}" size="126" placeholder="&{'NoiNhan'}..."/>
+        </div>
+    </div>
+    <div class="field input">
+        <label>&{'MucDoMat'}:</label>
+        <div class="fields">
+            <select name="CongVanDi.mucDoMat" id="select_field">
+                <option selected value="${models.CongVanDi.MUC_DO_MAT.MAT}">&{'Mat'}</option>
+                <option value="${models.CongVanDi.MUC_DO_MAT.TOI_MAT}">&{'ToiMat'}</option>
+                <option value="${models.CongVanDi.MUC_DO_MAT.TUYET_MAT}">&{'TuyetMat'}</option>
+            </select>
+        </div> <!-- .field -->
+    </div>
+
+    <div class="field input">
+        <label>&{'MucDoKhan'}:</label>
+        <div class="fields">
+            <select name="CongVanDi.mucDoKhan" id="select_field">
+                <option selected value="${models.CongVanDi.MUC_DO_KHAN.KHAN}">&{'Khan'}</option>
+                <option value="${models.CongVanDi.MUC_DO_KHAN.THUONG_KHAN}">&{'ThuongKhan'}</option>
+                <option value="${models.CongVanDi.MUC_DO_KHAN.HOA_TOC}">&{'HoaToc'}</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="field input inline">
+        <label>&{'SoTo'}:</label>
+        <div class="fields">
+            <input type="text"  name="CongVanDi.soTrang" value="${_CongVanDi.soTrang}" />
+        </div>
+    </div>
+        
+    <div class="field file">
+        <label>&{'TepDinhKem'}:</label>
+        <div class="fields">					
+            <input type="file" name="congVanDinhKem" />
+        </div> 
+    </div>
+    <div class="actions">
+    #{if _type=='add'}
+        <button type="submit" class="btn green" name="submit" value="create">&{'TaoCongVanDi'}</button>
+    #{/if}
+    #{elseif _type=='edit'}
+        <button type="submit" class="btn primary" name="submit" value="create">&{'LuuChinhSua'}</button>
+    #{/elseif}
+    </div>
