@@ -5,3 +5,7 @@ Quan Ly Cong Van - E-office Project by:
 - Dao Quang Huy
 - Nguyen Trung Hieu
 - Duong Thanh Dat
+
+1. Import sql file --> database, edit application.conf // will edit to yml later
+2. play dependencies
+3. play run
